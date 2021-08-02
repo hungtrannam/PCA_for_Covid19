@@ -7,75 +7,57 @@
 \PassOptionsToPackage{unicode}{hyperref}
 \PassOptionsToPackage{hyphens}{url}
 
-\documentclass[a4paper, oneside]{report}			% Viết trên giấy A4 và in một mặt
+\documentclass[a4paper, oneside]{report}
 
 % Liệt kê các gói chương trình lệnh có trên CRAN
 % ====================================================================
-% Về font chữ, canh lề, size chữ các tiêu đề
+
 \usepackage[english]{babel}
-\usepackage[utf8]{vietnam}		% Gõ Tiếng Việt trong LaTex
-%\usepackage{times}
-%\usepackage{mathptmx}
-\usepackage{titlesec}			% Chỉnh size, font của các tiêu đề
+\usepackage[utf8]{vietnam}		
+\usepackage{titlesec}
 \usepackage[margin=1in]{geometry}
-\renewcommand{\baselinestretch}{1.3}	% Lệnh tùy chỉnh dãn cách các dòng
-\usepackage{amsmath,amssymb,yhmath,mathrsfs,fontawesome,bm}	% Dùng để chèn các công thức Toán
-\usepackage{amsfonts}			% Dùng để chèn các công thức Toán
-\usepackage[standard,thmmarks]{ntheorem}	%thref,amsmath,hyperref
-%\usepackage[solcolor]{ex_test} 	% Gói trắc nghiệm (thầy Tuấn, gói này phải tải trên mạng)
-%\usepackage{indentfirst}		% Thụt đầu đòng nhe
-% Về các bảng, hình, màu sắc và liên kết
+\renewcommand{\baselinestretch}{1.3}
+\usepackage{amsmath,amssymb,yhmath,mathrsfs,fontawesome,bm}
+\usepackage{amsfonts}			
+\usepackage[standard,thmmarks]{ntheorem}	
+
 \usepackage{fancybox} 
-\usepackage{array} 				% Dùng để kẻ các đường trong bảng
-\usepackage{booktabs}			% Dùng để kẻ các đường trong bảng
-\usepackage{multirow}			% Dùng để chia các hàng trong các bảng
-\usepackage{makecell}			% Dùng để chia các cột trong bảng
+\usepackage{array} 				
+\usepackage{booktabs}			
+\usepackage{multirow}		
+\usepackage{makecell}		
 \usepackage{xtab}
 \usepackage[bookmarksnumbered, hyperindex, unicode]{hyperref}
 \usepackage{graphicx}			% Dùng để chèn hình ảnh
 \usepackage{sidecap}
-\graphicspath{ {images/} }		% Folder chứa hình ảnh
+\graphicspath{ {images/} }		
 \usepackage{subfiles}			% Dùng để chia thành các files nhỏ
 \usepackage[tight,footnotesize]{subfigure}
-\usepackage{fancyhdr}			% Dùng để tạo header và footer
-\usepackage{emptypage}			% Không đánh số trang, header, footer với các trang trắng
-\usepackage{tabularx}			% Dùng để chèn bảng
-\usepackage{pdflscape}			% Một vài trang nằm ngang (landscape) thay vì dọc (portrait) (bảng, biểu đồ)
-%\usepackage{lscape}			% Dùng để viết các trang nằm ngang cục bộ
-\usepackage{url}				% Dùng cho URL
-\usepackage{longtable}			% Dùng cho các bảng dài, nhiều trang
-\usepackage{tikz}				% Dùng để vẽ hình, vẽ bảng biến thiên (chương trình mạnh)
-\usetikzlibrary{calc}
+\usepackage{fancyhdr}			
+\usepackage{emptypage}			
+\usepackage{tabularx}			
+\usepackage{pdflscape}			
+\usepackage{url}				
+\usepackage{longtable}			
 \usepackage{floatrow}
 \floatsetup[table]{capposition=top}
-\usepackage{enumerate}			% Dùng để làm nổi bật header của bảng
-\usepackage{float}				% Dùng để thiết đặt thuộc tính H (here) đặt tại chỗ cho ảnh
-% Định dạng cho header của bảng
+\usepackage{enumerate}			
+\usepackage{float}
 \renewcommand\theadfont{\bfseries}
-\usepackage{listings}			% Dùng để viết các mã code trong Matlab và các chương trình khác
-\usepackage{color} 				%red, green, blue, yellow, cyan, magenta, black, white
+
+\usepackage{listings}			
+\usepackage{color} 			
 \usepackage{pdfpages}			% Chèn các file .pdf vào LaTex
-\usepackage[ruled,lined,commentsnumbered, norelsize]{algorithm2e}	% Dùng để viết các thuật toán
-\usepackage{makeidx}			%Tạo index
+\usepackage{makeidx}			% Tạo index
 \usepackage{imakeidx}
-\usepackage{qrcode}				% Tạo mã QR dẫn đến nguồn mã chương trình
+\usepackage{qrcode}
 \makeindex[title = INDEX,intoc]
-
-
-% ===================Tiêu đề và tác giả===============================
-\title{Nhận dạng ảnh và ứng dụng trong y học}
-\author{Trần Nam Hưng}	
-% ====================================================================
 
 % Header và footer 
 \pagestyle{fancy}
 \fancyhf{}
 \renewcommand{\headrulewidth}{0pt}	% Tùy chỉnh độ dày của thanh ngang header
 \cfoot{\fontsize{11}{11} \selectfont \thepage}
-
-%=================================================================
-%==============CÀI ĐẶT TÀI LIỆU===================================
-%=================================================================
 
 % ==========Lệnh tùy chỉnh kích cỡ chữ các tiêu đề===================
 \titleformat*{\section}{\Large\bfseries}
@@ -85,62 +67,30 @@
 
 \usepackage[margin=11pt,font=small, labelfont=bf]{caption} % Tùy chỉnh font, size của caption
 
-%===========Lệnh cài đặt màu=========================================
 \definecolor{mygreen}{RGB}{28,172,0}
 \definecolor{mylilas}{RGB}{170,55,241}
 
-%===========Lệnh cài đặt viết mã code Matlab trong Late==============
-\lstset{
-	language=Matlab,%
-	%basicstyle=\color{red},
-	breaklines=true,%
-	morekeywords={matlab2tikz},
-	keywordstyle=\color{blue},%
-	morekeywords=[2]{1}, keywordstyle=[2]{\color{black}},
-	identifierstyle=\color{black},%
-	stringstyle={\color{mylilas}},
-	commentstyle=\color{mygreen},%
-	showstringspaces=false,%without this there will be a symbol in the places where there is a space
-	numbers=left,%
-	numberstyle={\tiny \color{black}},% size of the numbers
-	numbersep=9pt, % this defines how far the numbers are from the text
-	emph=[1]{for,end,break},emphstyle=[1]\color{red}, %some words to emphasise
-	%emph=[2]{word1,word2}, emphstyle=[2]{style},  
-	basicstyle=\footnotesize\bf\ttfamily
-}
-
 %===========Lệnh cài đặt môi trường định lý====================
-\theoremstyle{plain} %Sử dụng phong cách plain để đánh số Định lý, chẳng hạn: Định lý 1, Định lý 2,...
-\theoremheaderfont{\normalfont\bfseries} % In ra chữ "Định lý": đậm, thẳng đứng.
-\theorembodyfont{\slshape} % Nội dung của Định lý được viết bằng chữ nghiêng.
-\theoremseparator {.}         % Ngăn cách giữa Định lý và nội dung định lý bởi dấu chấm.
-\renewtheorem{theorem}{\hspace*{0.5cm}Định lý} [chapter] % Lệnh này để trong file kết quả in ra chữ Định lý thay vì theorem nếu ta để mặc định.
+\theoremstyle{plain} 
+\theoremheaderfont{\normalfont\bfseries} 
+\theorembodyfont{\slshape}
+\theoremseparator {.}        
+\renewtheorem{theorem}{\hspace*{0.5cm}Định lý} [chapter] 
 \newcommand{\dly}[1]{\begin{theorem}#1\end{theorem}}
 
 %===========Lệnh cài đặt môi trường định nghĩa====================
-\theoremstyle{plain} %Sử dụng phong cách plain để đánh số Định nghĩa, chẳng hạn: Định nghĩa 1, Định nghĩa 2,...
-\theoremheaderfont{\bfseries} % In ra chữ "Định nghĩa": đậm, thẳng đứng.
-\theorembodyfont{\normalfont} % Nội dung của Định nghĩa được viết bằng chữ thẳng đứng.
-\theoremseparator {.}         % Ngăn cách giữa Định nghĩa và nội dung ví dụ bởi dấu chấm.
-\renewtheorem{definition}{\hspace*{0.5cm}Định nghĩa}[chapter] % Lệnh này để trong file kết quả in ra chữ Định nghĩa thay vì Defini nếu ta để mặc định.
+\theoremstyle{plain} 
+\theoremheaderfont{\bfseries} 
+\theorembodyfont{\normalfont} 
+\theoremseparator {.}         
+\renewtheorem{definition}{\hspace*{0.5cm}Định nghĩa}[chapter] 
 \newcommand{\dng}[1]{\begin{definition}#1\end{definition}}
 
-%===========Lệnh cài đặt môi trường chứng minh====================
-\theoremstyle{nonumberplain} % Vì ta không cần phải đánh số Chứng minh 1, Chứng minh 2,... nên chọn "nonumberplain".
-\theoremheaderfont{\bfseries\slshape} % In ra chữ "Chứng minh": đậm, nghiêng. 
-\theorembodyfont{\normalfont}
-\theoremsymbol{\ensuremath{_\blacksquare}} %Dấu kết thúc chứng minh là ô vuông đen.
-\renewtheorem{proof}{\hspace*{0.5cm}Chứng minh}
-\newcommand{\chm}[1]{\begin{proof}#1\end{proof}}
 
 %===========Lệnh gõ tắt hệ và, hệ hoặc
 \newcommand{\hoac}[1]{\left[\begin{aligned}#1\end{aligned}\right.}
 \newcommand{\heva}[1]{\left\{\begin{aligned}#1\end{aligned}\right.}
 
-
-%=================================================================
-%==============BẮT ĐẦU TÀI LIỆU===================================
-%=================================================================
 \usepackage{lmodern}
 \usepackage{ifxetex,ifluatex}
 \ifnum 0\ifxetex 1\fi\ifluatex 1\fi=0 % if pdftex
@@ -236,11 +186,12 @@
 \usepackage{selnolig}  % disable illegal ligatures
 \fi
 
+%==============BẮT ĐẦU TÀI LIỆU===================================
 
 \begin{document}
-\pagenumbering{roman}	% Kiểu số trang: i, ii, iii, iv, v,...	
+\pagenumbering{roman}	
 
-\subfile{bia-ngoai}		% Gọi file bìa ngoài
+\subfile{bia-ngoai}	% Gọi file bìa ngoài
 \subfile{bia-trong1}	% Gọi file bìa trong
 
 \begin{abstract}
@@ -264,22 +215,21 @@
 \chapter*{PHẦN MỞ ĐẦU}\addcontentsline{toc}{chapter}{PHẦN MỞ ĐẦU}
 \subfile{chapters/mo-dau}
 
-	
 \chapter{TỔNG QUAN CƠ SỞ LÝ THUYẾT}\label{chap.0}
-\pagenumbering{arabic}			% Kiểu số trang: 1, 2, 3,...
-\setcounter{page}{1}			% Cài đặt lại số trang
+\pagenumbering{arabic}			
+\setcounter{page}{1}			
 \subfile{chapters/chapter01}	% Gọi file chương 1
 
-\chapter[THUẬT TOÁN PHÂN TÍCH THÀNH PHẦN CHÍNH]{THUẬT TOÁN \\ PHÂN TÍCH THÀNH PHẦN CHÍNH}\label{chap.2}
+\chapter[THUẬT TOÁN PHÂN TÍCH THÀNH PHẦN CHÍNH]{THUẬT TOÁN \\ PHÂN TÍCH THÀNH PHẦN CHÍNH}\label{chap.1}
 \subfile{chapters/chapter03}	% Gọi file chương 2,
 
-\chapter[PHƯƠNG PHÁP PHÂN TÍCH NHÂN TỐ]{PHƯƠNG PHÁP PHÂN TÍCH NHÂN TỐ}\label{chap.3}
+\chapter[PHƯƠNG PHÁP PHÂN TÍCH NHÂN TỐ]{PHƯƠNG PHÁP PHÂN TÍCH NHÂN TỐ}\label{chap.2}
 \subfile{chapters/chapter04}	% Gọi file chương 3,
 
-\chapter{THỰC NGHIỆM}\label{chap.4}
+\chapter{THỰC NGHIỆM}\label{chap.3}
 \subfile{chapters/chapter05}	% Gọi file chương 4,
 
-\chapter{KẾT LUẬN}\label{chap.5}
+\chapter{KẾT LUẬN}\label{chap.4}
 \subfile{chapters/chapter06}
 
 \chapter{PHỤ LỤC}\label{phuluc}
@@ -301,5 +251,5 @@
 
 
 %=================================================================
-%==============KẾT THÚC TÀI LIỆU===================================
+%==============KẾT THÚC TÀI LIỆU==================================
 %=================================================================
