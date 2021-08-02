@@ -10,7 +10,7 @@ library(ggplot2, gridExtra)
 library(igraph)
 
 # Truy cập đường dẫn dữ liệu
-setwd("D:/PCA_for_Covid/PCA/Data")
+setwd("D:/PCA_for_Covid-main/Data")
 
 covid_cul <- read.csv("covid_case.csv",
                       header = TRUE,
