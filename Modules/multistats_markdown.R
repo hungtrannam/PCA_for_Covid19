@@ -36,7 +36,7 @@ covid_cul %>% dim()
 case_data %>% names()
 cul_data %>% names()
 
-$ Thống kê mô tả
+# Thống kê mô tả
 covid_case %>% sample_n(., 6)
 covid_cul %>% tail()
 
