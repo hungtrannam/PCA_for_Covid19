@@ -84,8 +84,10 @@ prcomp(cul_data, center = TRUE, scale = TRUE) %>% summary()
 princomp(case_data, scores = TRUE) %>% loadings()
 princomp(cul_data, scores = TRUE) %>% loadings()
 
-# Giá trị riêng và phần trăm phương sai giải thích
 pca_case <- FactoMineR::PCA(case_data, graph = FALSE)
+pca_cul <- FactoMineR::PCA(cul_data, graph = FALSE)
+
+# Giá trị riêng và phần trăm phương sai giải thích
 left <- pca_case %>% factoextra::fviz_eig(.,
                                           choice = 'eigenvalue',
                                           geom = 'line',
@@ -137,8 +139,18 @@ cul_data %>% psych::cortest.bartlett()
 cul_data %>% psych::KMO()
 
 
-# Ma trận xoay
+# Phân tích nhân tố
 Nfacs <- 3
+fa_case <- case_data %>% select(-Long.An) %>%
+         factanal(.,
+                  Nfacs,
+                  rotation = "varimax")
+fa_cul <- cul_data %>% 
+         factanal(.,
+                  2,
+                  rotation = "varimax")
+
+# Ma trận xoay
 principal(case_data %>% select(-Long.An),
           nfactors = Nfacs,
           rotate = "varimax") %>%
