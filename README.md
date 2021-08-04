@@ -17,30 +17,10 @@ TS. Trần Văn Lý
 
 ## Abstract
 
-In this research, the number of patients with Covid-19 and the number of deaths due to this disease in France, Germany, Iran, Italy, Spain, United Kingdom, and Unites States America are considered. First, the relations between the considered countries are studied using Pearson’s correlation. Then, based on the spread rate of Covid-19, these countries are categorized using principal
-component analysis.
-
-KEYWORDS
-Correlation
-Coronaviruses;
-Covid-19;
-Factor Analysis
-Statistics;
-Principal Component Analysis;
-
-
-
-
+In this research, the number of patients with Covid-19 due to this disease in some ofprovinces/cities are considered. First, the relations between the considered provinces/cities are studied using Pearson’s correlation. Then, based on the spread rate of Covid-19, these provinces/cities are categorized using principal component analysis and factor analysis. 
 
 ## Tóm tắt nội dung
-
-Từ khóa
-Hệ số tương quan
-Vi-rút Corona;
-Covid-19;
-Phân tích nhân tố
-Thống kê;
-Phân tích thành phần chính;
+Trong nghiên cứu này, số lượng bệnh nhân mắc Covid-19 do bệnh này ở một số tỉnh / thành phố được xem xét. Đầu tiên, mối quan hệ giữa các tỉnh / thành phố được xem xét được nghiên cứu bằng cách sử dụng tương quan Pearson. Sau đó, dựa trên tỷ lệ lây lan của Covid-19, các tỉnh / thành phố này được phân loại bằng cách sử dụng phân tích thành phần chính và phân tích nhân tố.
 
 
 Nếu bạn gặp bất cứ lỗi hoặc cho rằng nội dung có thể được cải thiện, bạn có thể tạo một issue [tại đây](https://github.com/hungtrannam/PCA_for_Covid19/issues).
