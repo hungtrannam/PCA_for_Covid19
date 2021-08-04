@@ -24,9 +24,9 @@ Trong nghiên cứu này, số lượng bệnh nhân mắc Covid-19 do bệnh n�
 
 Giải thích các tệp có trong Github
 * [README] Giới thiệu các thành viên và phần tóm tắt của bài báo
-* [Data] chứa hai bộ tập dữ liệu bao gồm 1) Dữ liệu các ca xác nhận dương tính với SAR-Cov-2 từ 18 tỉnh/thành phố được thu thập theo ngày (đặt tên là \textsf{covid\_case}) 2) Dữ liệu các ca xác nhận dương tính với SAR-Cov-2 được tích luỹ theo ngày (đặt tên là \textsf{covid\_cul});
-*	[Modules] Tệp R chứa trích gọn các lệnh phân tích dữ liệu. Khi sử dụng, ta lưu ý việc hạ tải nên được lưu ở ổ đĩa \textbf{D} để dễ dàng phân tích phía sau. 
-*	[thesis] Tệp các chương được trình bày trong cáo báo viết bằng hệ thống soạn thảo văn bản \LaTeX cũng như các hình ảnh minh họa đính kèm.
+* [Data] chứa hai bộ tập dữ liệu bao gồm 1) Dữ liệu các ca xác nhận dương tính với SAR-Cov-2 từ 18 tỉnh/thành phố được thu thập theo ngày (đặt tên là covid\_case) 2) Dữ liệu các ca xác nhận dương tính với SAR-Cov-2 được tích luỹ theo ngày (đặt tên là covid\_cul);
+*	[Modules] Tệp R chứa trích gọn các lệnh phân tích dữ liệu. Khi sử dụng, ta lưu ý việc hạ tải nên được lưu ở ổ đĩa **D** để dễ dàng phân tích phía sau. 
+*	[thesis] Tệp các chương được trình bày trong cáo báo viết bằng hệ thống soạn thảo văn bản LaTeX cũng như các hình ảnh minh họa đính kèm.
 *	[LISENCE] Ghi chú các chương trình lệnh trên ngôn ngữ lập trình R dùng để phân tích và phân loại dữ liệu và hướng dẫn sử dụng gói lệnh phân tích trên R.
 
 Nếu bạn gặp bất cứ lỗi hoặc cho rằng nội dung có thể được cải thiện, bạn có thể tạo một issue [tại đây](https://github.com/hungtrannam/PCA_for_Covid19/issues).
