@@ -1,5 +1,7 @@
 # PHÂN TÍCH THÀNH PHẦN CHÍNH VÀ ỨNG DỤNG TRONG PHÂN TÍCH DỊCH TỄ
 
+<img src="layout_set_logo.gif" align="left" alt="" width="250"/>
+
 ## Thông tin cá nhân
 **Giáo viên hướng dẫn**
 
@@ -26,6 +28,7 @@ TS. Trần Văn Lý
 
 
 
+Nếu bạn gặp bất cứ lỗi hoặc cho rằng nội dung có thể được cải thiện, bạn có thể tạo một issue [tại đây](https://github.com/hungtrannam/PCA_for_Covid19/issues).
 
 
 
