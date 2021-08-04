@@ -22,6 +22,8 @@ In this research, the number of patients with Covid-19 due to this disease in so
 ## Tóm tắt nội dung
 Trong nghiên cứu này, số lượng bệnh nhân mắc Covid-19 do bệnh này ở một số tỉnh / thành phố được xem xét. Đầu tiên, mối quan hệ giữa các tỉnh / thành phố được xem xét được nghiên cứu bằng cách sử dụng tương quan Pearson. Sau đó, dựa trên tỷ lệ lây lan của Covid-19, các tỉnh / thành phố này được phân loại bằng cách sử dụng phân tích thành phần chính và phân tích nhân tố.
 
+
+## Thông tin mã nguồn
 Giải thích các tệp có trong Github
 * [README] Giới thiệu các thành viên và phần tóm tắt của bài báo
 * [Data] chứa hai bộ tập dữ liệu bao gồm 1) Dữ liệu các ca xác nhận dương tính với SAR-Cov-2 từ 18 tỉnh/thành phố được thu thập theo ngày (đặt tên là covid\_case) 2) Dữ liệu các ca xác nhận dương tính với SAR-Cov-2 được tích luỹ theo ngày (đặt tên là covid\_cul);
