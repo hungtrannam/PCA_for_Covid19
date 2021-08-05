@@ -1,0 +1,75 @@
+\documentclass[../thesis.tex]{subfiles}
+
+\begin{document}
+Phân tích nhân tố là các phương pháp rút gọn dữ liệu trên cơ sở tìm mối liên quan của các biến liên tục để từ đó giải thích chúng bằng vài nhân tố hoặc thành tố. Điều kiện của phân tích nhân tố là các biến phải có liên quan với nhau (nếu mối liên quan mà nhỏ - không thích hợp cho phương pháp này).
+\section{Dẫn nhập}
+
+Phân tích nhân tố nói chung là một nhóm các thuật toán được sử dụng chủ yếu để thu gọn và tóm tắt các dữ liệu. Các biến có liên quan với nhau được nhóm lại và tách ra khỏi các biến ít liên quan. Trong nghiên cứu, chúng ta có thể thu thập một lượng biến khá lớn, dẫn đến khó khăn trong xử lý, trong đánh giá bản chất. Liên hệ giữa các nhóm biến cố có tương quan được xem xét và trình bày dưới dạng tổ hợp một số các nhân tố cơ bản. Phân tích nhân tố thường được sử dụng trong các trường hợp sau
+
+\begin{itemize}
+	\item Nhận diện một tập hợp gồm một số ít lượng biến mới, không tương quan với nhau để thay thế tập biến gốc có tương quan với nhau để thực hiện một phân tích đa biến tiếp theo.
+	\item Nhận diện các khía cạnh hay nhân tố giải thích được các liên hệ tương quan trong một tập biến. 
+	\item Nhận diện một tập hợp gồm một số ít các biến nổi trội từ một tập hợp nhiều biến để sử dụng trong các phân tích thống kê đa biến
+\end{itemize}
+
+
+
+\section{Thuật toán phân tích nhân tố}
+\subsection{Kiểm định Barlett và kiểm định KMO}
+Phân tích nhân tố là một phương pháp thống kê dùng để mô tả sự biến thiên của những biến có tương quan được quan sát bằng một số nhỏ hơn các biến không quan sát được gọi là nhân tố. Ví dụ, sự biến thiên của bốn biến quan sát được có thể chỉ thể hiện sự biến thiên của hai biến không quan sát được. Những biến quan sát được mô hình hoá bằng tổ hợp tuyến tính của những nhân tố tiềm năng, cộng với số hạng lỗi. Để thực hiện được phân tích nhân tố có sự hiệu quả, bài báo cáo đề nghị các kiểm định sau.
+\subsubsection{a. Kiểm định Barlett}
+
+Kiểm định Barlett cho phép chúng ta so sánh phương sai của hai hoặc nhiều mẫu để xác định xem chúng có được rút trích từ các tập hợp có phương sai như nhau hay không.
+
+Kiểm định Barlett phù hợp với dữ liệu phân phối chuẩn. Kiểm định có giả thiết không nếu các phương bằng nhau và kiểm định giả thiết đối nếu chúng không bằng nhau.
+Kiểm định có thể thực hiện trên các giá trị số (không bao gồm dữ liệu chuỗi).
+
+Kiểm định này hữu ích để kiểm tra các giả định của một phân tích phương sai. Ta dựa vào $ p-value $ để xác định kết luận với giả thiết thống kê là
+
+$ H_0: $ các mẫu có phương sai bằng nhau.
+
+$ H_1: $ ít nhất một mẫu có phương sai khác nhau có ý nghĩa.
+
+$ p-value \leq 0.05 $ bác bỏ giả thuyết và
+$ p-value > 0.05 $ không bác bỏ giả thiết.
+
+\subsubsection{b. Kiểm định KMO}
+
+Kiểm định Bartlett (Bartlett’s test of sphericity) dùng để xem xét các biến quan sát trong nhân tố có tương quan với nhau hay không. Chúng ta cần lưu ý, điều kiện cần để áp dụng phân tích nhân tố là các biến quan sát phản ánh những khía cạnh khác nhau của cùng một nhân tố phải có mối tương quan với nhau. Điểm này liên quan đến giá trị hội tụ trong phân tích EFA được nhắc ở trên. 
+
+Do đó, nếu kiểm định cho thấy không có ý nghĩa thống kê thì không nên áp dụng phân tích nhân tố cho các biến đang xem xét. Kiểm định Bartlett có ý nghĩa thống kê (sig Bartlett’s Test $ < 0.05 $), chứng tỏ các biến quan sát có tương quan với nhau trong nhân tố.
+
+
+\subsection{Xoay nhân tố}
+
+Trong phần này ta xét ma trận nhân tố\index{ma trận nhân tố} (Component Matrix). Ma trận này chứa hệ số biểu diễn các biến chuẩn hóa bằng các nhân tố (mỗi biến là một đa thức của các nhân tố). Những hệ số tải\index{hệ số tải} này (factor loading) biểu diễn tương quan giữa các nhân tố và các biến. Hệ số này lớn cho biết nhân tố và biến có liên hệ chặt chẽ với nhau. Các hệ số này được dùng để giải thích các nhân tố. Hệ số tải nhân tố $ Factor Loading > 0.5 $. Nếu biến quan sát nào có hệ số tải nhân tố thấp hơn $ 0.5 $ sẽ bị loại nhằm đảm bảo tập dữ liệu đưa vào là có ý nghĩa cho phân tích nhân tố. 
+
+
+Trong ma trận nhân tố, nếu có nhiều biến có hệ số tải $ 0.5 $ ta tiến hành xoay nhân tố để các hệ số lớn hơn hơn $ 0.5 $. Có nhiều phương pháp xoay nhưng phương pháp xoay varimax\index{phương pháp xoay varimax} là phổ biến nhất và thường được sử dụng để xoay các phương pháp thành phần chính.
+
+Tải trọng dương cho biết một biến và một thành phần chính có tương quan thuận: sự gia tăng của một trong những kết quả là sự gia tăng của thành phần kia. Tải trọng âm cho thấy mối tương quan âm. Tải trọng lớn (có thể là tích cực hoặc tiêu cực) cho thấy rằng một biến có ảnh hưởng mạnh mẽ đến thành phần chính đó.
+
+Varimax là một vòng quay trực giao của các trục nhân tố để tối đa hóa sự thay đổi của các tải trọng bình phương của một nhân tố (cột) trên tất cả các biến (hàng) trong một ma trận nhân tố.
+
+Trong bài báo cáo này, chúng tôi sử dụng hệ số tải ứng với $ 90 $ quan sát là $ 0.6 $ và sử dụng phương pháp xoay nhân tố varimax 
+
+
+
+\section*{Tổng kết chương}
+
+Trong chương này ta sẽ nói về phương pháp phân tích nhân tố với hai ý chính là dẫn nhập và thuật toán phân tích nhân tố. 
+Đầu tiên ta biết được phân tích nhân tố là các phương pháp rút gọn dữ liệu trên cơ sở tìm mối liên quan của các biến liên tục để từ đó giải thích chúng bằng vài nhân tố hoặc thành tố.
+Thứ hai là dẫn nhập ta sẽ phát biểu phân tích nhân tố nói chung là gì và phân tích nhân tố được sự dụng trong các trường hợp nào.
+Phân tích nhân tố nói chung là một nhóm các thuật toán được sử dụng chủ yếu để thu gọn và tóm tắt các dữ liệu. Phân tích nhân tố được sử dụng trong ba trường hợp
+
+\begin{itemize}
+	\item Nhận diện một tập hợp gồm một số ít lượng biến mới, không tương quan với nhau để thay thế tập biến gốc có tương quan với nhau để thực hiện một phân tích đa biến tiếp theo.
+	\item Nhận diện các khía cạnh hay nhân tố giải thích được các liên hệ tương quan trong một tập biến.
+	\item Nhận diện một tập hợp gồm một số ít các biến nổi trội từ một tập hợp nhiều biến để sử dụng trong các phân tích thống kê đa biến.
+\end{itemize}
+
+Thứ ba là thuật toán phân tích nhân tố trong đó bao gồm kiểm định Bartlett, KMO và xoay nhân tố.
+
+
+
+\end{document}
