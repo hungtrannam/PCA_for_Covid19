@@ -1,0 +1,213 @@
+\documentclass[../thesis.tex]{subfiles}
+
+\begin{document}
+
+
+\section{Lý thuyết đại số tuyến tính}
+
+Lý thuyết đại số tuyến tính cung cấp các định nghĩa về ma trận\index{ma trận} và tập trung vào các khái niệm có liên quan đến thuật toán phân tích thành phần chính và phân tích nhân tố. Ngoài ra bài báo cáo cũng đưa ra quy trình trực giao hóa và cách xác định véc-tơ riêng nhằm đi sâu giải thích thuật toán phân tích thành phần chính.
+
+
+\subsection{Ma trận và các phép tính trên ma trận}
+
+\dng{[Ma trận] Giả sử $ \mathbb{F} $ là một trường tùy ý, mỗi bảng có dạng 
+	$$ \mathbf{A} = \begin{pmatrix} a_{11} & a_{12} & \ldots & a_{1n} \\
+						   a_{21} & a_{22} & \ldots & a_{2n} \\
+						   \vdots & \vdots & 		& \vdots\\
+						   a_{m1} & a_{m2} & \ldots & a_{mn}
+		   \end{pmatrix},
+ $$ trong đó $ a_{ij} \in\mathbb{F} $ với $ 1\leq i \leq m $ và $ 1\leq j \leq n $, được gọi là một \emph{ma trận} $ m $ hàng $ n $ cột (hay ma trận cấp $ m\times n $) với các yếu tố trong trường $ \mathbb{F} $. Các vô hướng $ a_{ij}\in \mathbb{F} $ được gọi là \emph{phần tử} (hay hệ tử) của hàng $ i $ cột $ j $ của ma trận $ \mathbf{A} $. 
+ 
+ Ma trận trên thường được ký hiệu gọn là $ \mathbf{A} = (a_{ij})_{m\times n} $.
+}
+
+
+
+
+
+\dng{[Phép cộng và nhân vô hướng đối với hai ma trận] Ta định nghĩa hai phép toán cộng hai ma trận và nhân ma trận với một vô hướng trên tập hợp các ma trận $ \mathbf{M} $ như sau
+\begin{align*}
+	(a_{ij}) + (b_{ij}) &= (a+b)_{ij}\\
+	\alpha(a_{ij}) &= (\alpha a_{ij})
+\end{align*}
+
+} 
+
+\dng{[Tích của hai ma trận] Giả sử ma trận $ \mathbf{A}= (a_{ij})\in \mathbf{M}(m\times n\,,\mathbb{F}) $ và ma trận $ \mathbf{B}=(b_{ij})\in\mathbf{M}(n\times p\,,\mathbb{F}) $, ta có tích của hai ma trận $ \mathbf{A} $ và $ \mathbf{B} $, ký hiệu $ \mathbf{A}\mathbf{B} $, là ma trận $ \mathbf{C} = (c_{ij}) \in \mathbf{M}(m\times p\,,\mathbb{F}) $ với các phần tử được xác định như sau
+$$ c_{ik} = \sum^{n}_{j=1}a_{ij}b_{jk}\,, (1\leq i \leq m\,,1\leq k\leq p). $$
+}
+
+
+
+
+\dng{[Ma trận đơn vị] Ma trận $ \mathbf{I}_n  $ là phần tử trung hòa của phép nhân hai ma trận. Nếu $ \mathbf{A}\in\mathbf{M}(n\times n\,,\mathbb{F}) $ và $ \mathbf{I}_n $ là ma trận đơn vị bậc $ n $ thì $ \mathbf{A}\mathbf{I} = \mathbf{I}\mathbf{A} = \mathbf{A} $.}
+
+
+\dng{[Ma trận khả nghịch] Ma trận vuông\index{Ma trận vuông} $ \mathbf{A} \in\mathbf{M}(n\times n\,, \mathbb{F}) $ được gọi là \emph{ma trận khả nghịch} (hoặc \emph{ma trận không suy biến}) nếu có ma trận $ \mathbf{B}\in M(n\times n\,, \mathbb{F})$ sao cho $ \mathbf{A} \mathbf{B} = \mathbf{B} \mathbf{A} = \mathbf{I}_n $. Khi đó, ta nói $ \mathbf{B} $ là \emph{ma trận nghịch đảo} của $ \mathbf{A} $ và ký hiệu $ \mathbf{B} = \mathbf{A}^{-1} $
+}
+
+\dng{[Ma trận đường chéo] Một ma trận vuông $ \mathbf{A} = (a_{ij}) $ với $ 1\leq i\,,j\leq n $ thuộc $ \mathbf{M}(n\,,n) $ được gọi là ma trận đường chéo khi và chỉ khi các phần tử khác đường chéo đều bằng $ 0 $. Ta ký hiệu ma trận đường chéo là $ diag(\lambda_1\,\ldots\,,\lambda_n) $}
+
+\dng{[Vết của ma trận vuông] Với mọi ma trận vuông $ \mathbf{A} = (a_{ij}) \in \mathbf{M}(n\,,n) $, vết của ma trận vuông $ \mathbf{A} $, ký hiệu $ trace(\mathbf{A}) $ được định nghĩa là tổng các phần tử trong đường chéo của $ \mathbf{A} $, tức là $ trace(\mathbf{A}) = \sum^{n}_{i=1}a_{ii}. $}
+
+
+\subsection{Chuẩn}
+
+Phần này định nghĩa chuẩn của một véc-tơ trên tập số thực $ \mathbb{R}^d $ có $ d $-chiều và quy trình trực giao hóa. 
+
+\dng{[Tích vô hướng của hai véc-tơ] Cho hai véc-tơ $ \mathbf{x}\,,\mathbf{y}\in\mathbb{R}^{d} $ được định nghĩa bởi
+$$ \mathbf{x}^\top\mathbf{y} = \mathbf{y}^\top\mathbf{x} = \sum^{d}_{i=1}x_iy_i $$
+}
+Nếu tích vô hướng của hai véc-tơ khác $ \mathbf{0} $ bằng $ 0 $ (không) thì ta nói hai véc-tơ đó trực giao với nhau.
+\dng{[Độ đo phân biệt giữa các phần tử rời rạc] Cho $ X $ là tập tùy ý khác rỗng. Hàm số $ \mathrm{d}\,:\,X\times X \to \mathbb{R} $ là độ đo phân biệt nếu $ \mathrm{d} $ thỏa mãn ba tiên đề
+	\begin{enumerate}[(i)]
+		\item $ \mathrm{d}(x\,,y)\geq0 \,,\forall x\,,y \in X$;
+		\item $ \mathrm{d}(x\,,y) = 0\Leftrightarrow x=y $;
+		\item $ \mathrm{d}(x\,,y)=\mathrm{d}(y\,,x) $.
+	\end{enumerate}
+	
+	Nếu ta thêm một tiên đề độ đo phân biệt thỏa mãn bất đẳng thức tam giác $$ \mathrm{d}(x\,,y)\leq \mathrm{d}(x\,,z)+\mathrm{d}(z\,,y)\,,\forall x\,,y\,,z\in X $$ thì khi đó độ đo phân biệt\index{đó độ đo phân biệt} là một metric\index{metric} (khoảng cách).
+}
+
+
+\dng{[Chuẩn] Hàm số $ f\,:\,\mathbb{R}^d\to\mathbb{R} $ được gọi là một chuẩn \index{chuẩn} nếu nó thỏa mãn ba tiên đề sau đây
+\begin{enumerate}[(i)]
+	\item $ f(\mathbf{x})\geq0\,,\forall \mathbf{x}\in\mathbb{R}^d$;
+	\item $ f(\alpha\mathbf{x}) =\vert\alpha\vert f(\mathbf{x})\,,\forall\alpha\in\mathbb{R} $;
+	\item $ f(\mathbf{x}_1) + f(\mathbf{x}_2)\geq f(\mathbf{x}_1 + \mathbf{x}_2)\,,\forall \mathbf{x}_1\,,\mathbf{x}_2\in\mathbb{R}^d$.
+\end{enumerate}
+
+}
+
+\dng{[Chuẩn trong không gian Euclid] Giả sử $ E $ là không gian véc-tơ Euclid với tích vô hướng $ \langle\cdot,\cdot\rangle $. Khi đó, độ dài (hay chuẩn)  của véc-tơ $ \mathbf{v}\in E $ là số thực không âm được định nghĩa $ \Vert \mathbf{v}\Vert = \sqrt{\langle\mathbf{v},\mathbf{v}\rangle} $.}
+
+\dng{[Chuẩn của ma trận] Giả sử hàm số $\|\mathbf{x}\|_{\alpha}$ là một chuẩn bất kỳ của vector $\mathbf{x}$. Ứng với chuẩn này, định nghĩa chuẩn tương ứng cho ma trận $\mathbf{A}$ là
+	\begin{equation*} 
+		\|\mathbf{A}\|_{\alpha} = \max_{\mathbf{x}} \frac{\|\mathbf{Ax}\|_{\alpha}}{\|\mathbf{x}\|_{\alpha}} 
+	\end{equation*} 
+	
+chú ý rằng ma trận $\mathbf{A}$ có thể không vuông và số cột của nó bằng với số chiều của $\mathbf{x}$.}
+
+Chúng ta sẽ quan tâm nhiều hơn tới chuẩn bậc 2. Chuẩn bậc 2 của ma trận được định nghĩa là
+\begin{equation*} 
+\label{eqn:27_1}
+\|\mathbf{A}\|_2 = \max_{\mathbf{x}} \frac{\|\mathbf{Ax}\|_2}{\|\mathbf{x}\|_2}
+\end{equation*} 
+
+
+
+\dng{[Hình chiếu của véc-tơ] Cho hai véc-tơ $ \mathbf{x}\,,\mathbf{y}\in\mathbb{R}^d $, ta gọi hình chiếu của véc-tơ $ \mathbf{x} $ lên véc-tơ $ \mathbf{y} $ là véc-tơ $ Proj_{\mathbf{y}}(\mathbf{x}) $ được xác định bởi công thức}
+
+
+
+
+
+
+\subsection{Véc-tơ riêng và giá trị riêng. Thuật toán tìm véc-tơ riêng}
+
+
+
+
+\dng{[Véc-tơ riêng] Cho $ \mathbf{A} \in \mathbf{M}(n\times n\,,\mathbb{R}) $, véc-tơ $ \mathbf{v}\in\mathbb{C}^d\,, \mathbf{v}\neq \mathbf{0} $ được gọi là véc-tơ riêng của $ \mathbf{A} $ nếu tồn tại vô hướng $ \lambda $ sao cho $ \mathbf{A}\mathbf{v} = \lambda \mathbf{v} $. Khi đó, vô hướng $ \lambda $ được gọi là giá trị riêng của $ \mathbf{A} $ và $ \mathbf{v} $ được gọi là véc-tơ riêng\index{véc-tơ riêng} ứng với giá trị riêng\index{giá trị riêng} $ \lambda $ đó.}
+\dng{[Đa thức đặc trưng] Đa thức bậc $ n $ của một ẩn $ \lambda $ trong ma trận $ \mathbf{A} $ với hệ số trong $ \mathbb{F} $ là $$ p_{\mathbf{A}}(\lambda) = \det(\mathbf{A}-\lambda I_n) $$ được gọi là đa thức đặc trưng của ma trận. Ta có nghiệm của đa thức đặc trưng trong ma trận chính là giá trị riêng của ma trận $ \mathbf{A} $.}
+
+Từ định nghĩa trên, ta cũng có $ (\mathbf{A}-\lambda\mathbf{I}_n)\mathbf{x} = 0 $ là phương trình đặc trưng của ma trận, tức $ \mathbf{x} $ là một véc-tơ nằm trong không gian $ \mathcal{N}(\mathbf{A}-\lambda\mathbf{I}_n) $. Về lý thuyết, phương trình đặc trưng có khả năng có nghiệm phức, nghĩa là $ \mathbf{A} $ có giá trị riêng phức. Trên thực tế, ta không xét trường hợp này.
+
+\dly{[Tổng các giá trị riêng] Tổng các giá trị riêng của một ma trận vuông bất kỳ luôn bằng vết của ma trận đó.}
+
+\section{Lý thuyết xác suất}
+
+Bài báo cáo trình bày các khái niệm có liên quan đến thuật toán chính của đề tài. Làm tiền đề để xây dựng lý thuyết đại số tuyến tính trên các đối tượng của lý thuyết thống kê, hình thành thuật toán phân tích thành phần chính.
+
+\dng{[Phân phối xác suất] Một phân phối xác suất hay thường gọi hơn là một hàm phân phối xác suất là quy luật cho biết cách gán mỗi xác suất cho mỗi khoảng giá trị của tập số thực, sao cho các tiên đề xác suất\index{tiên đề xác suất} được thỏa mãn.
+
+\textbf{Tiên đề thứ nhất} Xác suất của một biến số là một số thực không âm. Với hai tập bất kỳ $ E\in F\,,\mathbb{P}(E)\geq0 $
+
+\textbf{Tiên đề thứ hai} Xác suất một biến cố sơ cấp nào đó trong tập mẫu sẽ xảy ra là 1. $ \mathbb{P}(\Omega) =1 $.
+
+\textbf{Tiên đề thứ ba} Xác suất của một tập biến cố là hợp của các tập con không giao nhau bằng tổng các xác suất của các tập con đó. Một chuỗi đếm được bất kỳ gồm các biến cố đôi một không giao nhau $ E_1\,,E_2\,\ldots $ thỏa mãn
+$$ \mathbb{P}(E_1\cup E_2\cup\cdots) = \sum\mathbb{P}(E_i) $$
+
+
+
+
+}
+
+\dng{[Phương sai] Phương sai của đại lượng ngẫu nhiên $ \mathbf{X} $, ký hiệu là $ Var(\mathbf{X}) $, là trung bình bình phương độ lệch so với trung bình
+$$ Var(\mathbf{X}) = \mathbb{E}(\mathbf{X} - \mathbb{E}(\mathbf{X}))^2 $$
+}
+
+Trong thống kê, phương sai đặc trưng cho khoảng cách giữa mỗi số liệu với nhau và đến giá trị trung bình của tập dữ liệu được thể hiện qua công thức
+
+$$ s^2 = \dfrac{1}{n-1}\sum_{i=1}^{n}(x_i-\overline{x})^2, $$
+trong đó, 
+
+$ x_i $ là giá trị của quan sát thứ $ i $ trong mẫu,
+
+$ \overline{x} $ là giá trị trung bình của tập dữ liệu, được tính theo công thức $ \overline{x} = \frac{1}{n}\sum^{n}_{i=1} x_i $,
+
+$ n $ là số quan sát trong tập dữ liệu.
+
+\dng{[Ma trận hiệp phương sai]\index{ma trận hiệp phương sai} của tập hợp $ n $ biến ngẫu nhiên là một ma trận vuông hạng $ n\times n $, trong đó các phần tử nằm trên đường chéo (từ trái sang phải, từ trên xuống dưới) lần lượt là phương sai tương ứng của các biến này (ta chú ý rằng $ Var(\mathbf{X}) = Cov(\mathbf{X}\,,\mathbf{X}) $), trong khi các phần tử còn lại (không nằm trên đường chéo) là các hiệp phương sai của đôi một hai biến ngẫu nhiên khác nhau trong tập hợp.}
+
+Trong trường hợp chúng ta có một tập hợp dữ liệu với hơn hai chiều, sẽ có nhiều hơn một phép đo hiệp phương sai có thể được tính toán. 
+
+Ví dụ, từ một bộ dữ liệu được đo trên ba biến $ \mathbf{X}, \mathbf{Y}, \mathbf{Z} $, ta có thể tính toán $ cov(\mathbf{X}, \mathbf{Y}), cov(\mathbf{X}, \mathbf{Z}) $ và $ cov(\mathbf{Y}, \mathbf{Z}) $. Trong thực tế, đối với một bộ dữ liệu $ d $ chiều, ta có thể tính toán $ \frac{n!}{(n-2)!} $ giá trị hiệp phương sai khác nhau. 
+
+Một cách hữu ích để có được tất cả các giá trị hiệp phương sai có thể có giữa tất cả các biến khác nhau là đặt tất cả các tính toán trong một ma trận. Điều này dẫn đến định nghĩa khái niệm ma trận hiệp phương sai cho một tập hợp dữ liệu $ \mathbf{X} = (\mathbf{X}_1\,, \mathbf{X}_2\,, \ldots, \mathbf{X}_n) $ kích thước $ n $
+$$ C=(c_{ij}){m\times n}, c_{ij}=cov(\mathbf{X}_i\,,\mathbf{X}_j) $$
+
+
+
+
+
+
+
+\dng{[Hệ số tương quan] Hệ số tương quan Pearson\index{hệ số tương quan Pearson} đặc trưng cho mối quan hệ tương quan giữa hai biến số với công thức được xác định như sau
+$$ \rho_{xy} = \dfrac{Cov(\mathbf{X_1}\,,\mathbf{X_2})}{\sigma_\mathbf{X_1}\sigma_\mathbf{X_2}}, $$
+trong đó, 
+
+$ Cov(\mathbf{X_1}\,,\mathbf{X_2}) $ là hiệp phương sai của biến $ \mathbf{X_1} $ và $ \mathbf{X_2} $ được tính bằng công thức.
+
+$ \sigma_\mathbf{X_1} $ và $ \sigma_\mathbf{X_2} $ lần lượt là độ lệch chuẩn của biến $ \mathbf{X_1} $ và $ \mathbf{X_2} $, được tính bằng công thức.
+
+}
+
+Hệ số tương quan là đại lượng đo lường mức độ quan hệ giữa hai biến ngẫu nhiên, lấy giá trị từ $ -1 $ đến $ 1 $. Quan hệ giữa hai biến càng chặt nếu hệ số tương quan càng gần $ \pm1 $ và càng lỏng nếu hệ số tương quan càng gần $ 0 $. Quan hệ giữa hai biến là đồng biến nếu tương quan dương, ngược lại nghịch biến nếu tương quan âm.
+
+\dng{[Ma trận tương quan] Với một tập biến $ \mathbf{X_1}\,,\mathbf{X_2}\,\ldots\,,\mathbf{X_n} $ với hệ số tương quan đơn giữa $ \mathbf{X}_i $ và $ \mathbf{X}_j $ viết dưới dạng ma trận vuông $ \rho_{ij} $ được gọi là ma trận tương quan $ n $ dòng $ n $ cột mà các phần tử dòng $ i $ và cột $ j $ là $ \rho_{ij} $.}
+
+
+\section{Phương pháp chuẩn hóa dữ liệu}
+
+Chuẩn hóa cơ sở dữ liệu là một phương pháp khoa học để phân tách một bảng có cấu trúc phức tạp thành những bảng có cấu trúc đơn giản theo những quy luật đảm bảo không làm mất thông tin dữ liệu.
+
+Trong phân tích thành phần chính, các biến thường được chia tỷ lệ (tức là được chuẩn hóa). Điều này được khuyến kích khi các biến đo lường ở các thang đo khác nhau (vd: kilogram, kilometer, centimeter,$ \ldots $). Nếu không được chuẩn hóa thì đầu ra của thuật toán phân tích thành phần chính sẽ bị ảnh hưởng nghiêm trọng.
+
+Mục đích chuẩn hóa số liệu là làm cho các biến có thể so sánh được. Có rất nhiều kiểu chuẩn hóa được phát triển riêng biệt cho các loại phân tích Machine Learning \index{Machine Learning} khác nhau. Đối với thuật toán phân tích thành phần chính, ta sử dụng biến được chia tỷ lệ để có độ lệch chuẩn là 1 và trung bình là 0.
+
+\dng{[Chuẩn hóa chuẩn]
+Cho tập dữ liệu 
+$$ z-score = \dfrac{\mathbf{x}-\bm{\mu}}{\bm{\sigma}}, $$
+trong đó, 
+
+$ \mathbf{x} $ là biến dữ liệu (véc-tơ),
+
+$ \bm{\mu} $ là trung bình của biến dữ liệu tương ứng,
+
+$ \bm{\sigma} $ là độ lệch chuẩn
+}
+
+
+\newpage
+\section*{Tổng kết chương}
+
+Tổng kết, trong chương dẫn nhập này, 
+
+Đầu tiên, bài báo cáo trình bày tổng quan lý thuyết đại số. Các định nghĩa về ma trận trên trường $ \mathbb{F} $ được phát biểu lại để tâp trung vào thuật toán xác định giá trị riêng và véc-tơ riêng. Thuật toán chéo hóa nhằm xoay các trục chính cho thẳng hàng với các vectơ riêng từ đó định hình nên phương pháp phân tích thành phần chính.
+
+Thêm nữa, chúng tôi cũng phát biểu lại một số yếu điểm trong lý thuyết xác suất và chuẩn hóa dữ liệu đã được sử dụng rất nhiều trong Machine Learning. Các thực nghiệm trong bài báo cáo cũng sử dụng loại chuẩn hóa trên để xử lý dữ liệu bằng các ngôn ngữ lập trình R\index{ngôn ngữ lập trình R}.  
+
+Chương tiếp theo tập trung nghiên cứu phương pháp phân tích thành phần chính cũng như đưa ra thuật toán giảm thiểu số chiều dữ liệu.
+
+\end{document}
