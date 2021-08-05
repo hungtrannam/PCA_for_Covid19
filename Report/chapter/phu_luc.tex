@@ -1,0 +1,70 @@
+\documentclass[../thesis.tex]{subfiles}
+
+
+\begin{document}
+
+\section{Thông tin phần mềm}
+Phần này cung cấp một số thông tin về thiết bị mà nhóm tác giả sử dụng để hoàn thành phần thực nghiệm. Trong quá trình thực hiện phân tích thành phần chính cũng như phân tích nhân tố và các tác vụ khác, chúng tôi chỉ sử dụng một máy chủ với các thông tin kỹ thuật được cho bởi bảng dưới đây.
+	
+\begin{table}[H]
+	\centering
+	\begin{tabular}{ll}
+		\toprule[1.5pt]
+		
+		Processor			&  Intel(R) Core(TM) i3-9100 CPU @ 3.60GHz   3.60 GHz\\
+		Installed RAM		&  8,00 GB \\
+		System type 		&  64-bit operating system, x64-based processor (AMD64)\\
+		Edition				& Windows 10\\
+		\bottomrule[1.5pt]
+	\end{tabular}
+\end{table}
+
+Bài báo sử dụng ngôn ngữ lập trình thống kê R phiên bản 4.1.0 (cập nhật vào ngày 18/7/2021) để thực hiện các tác vụ trong bài báo cáo. Thông tin chi tiết được cho bởi bảng dưới dây. Để hoàn thành các mục tiêu nghiên cứu, chúng tôi sử dụng một số gói chương trình lệnh trong ngôn ngữ lập trình thống kê R được liệt kê như sau.
+
+\begin{Shaded}
+	\begin{Highlighting}[]
+\NormalTok{pks }\OtherTok{\textless{}{-}} \FunctionTok{c}\NormalTok{(}\StringTok{\textquotesingle{}psych\textquotesingle{}}\NormalTok{, }\StringTok{\textquotesingle{}tidyverse\textquotesingle{}}\NormalTok{, }\StringTok{\textquotesingle{}factoextra\textquotesingle{}}\NormalTok{, }\StringTok{\textquotesingle{}ggplot2\textquotesingle{}}\NormalTok{,}
+	\StringTok{\textquotesingle{}gridExtra\textquotesingle{}}\NormalTok{, }\StringTok{\textquotesingle{}FactoMineR\textquotesingle{}}\NormalTok{, }\StringTok{\textquotesingle{}igraph\textquotesingle{}}\NormalTok{, }\StringTok{\textquotesingle{}corrplot\textquotesingle{}}\NormalTok{)}
+\FunctionTok{install.packages}\NormalTok{(pks, }\AttributeTok{dependencies =} \ConstantTok{TRUE}\NormalTok{)}
+\FunctionTok{library}\NormalTok{(psych)}
+\FunctionTok{library}\NormalTok{(tidyverse)}
+\FunctionTok{library}\NormalTok{(factoextra, FactoMineR)}
+\FunctionTok{library}\NormalTok{(ggplot2, gridExtra)}
+\FunctionTok{library}\NormalTok{(igraph, corrplot)}
+	\end{Highlighting}
+\end{Shaded}
+
+\begin{description}
+	\item[psych] gồm các chức năng chủ yếu dành cho phân tích đa biến và xây dựng thang đo bằng cách sử dụng phân tích nhân tố, phân tích thành phần chính, phân tích cụm và phân tích độ tin cậy,$ \ldots $ ngoài ra gói "psych" còn dùng để tính toán các chỉ tiêu thống kê cơ bản theo một hoặc nhiều nhóm (hay đối tượng) thông qua một câu lệch ngắn gọn.
+	\item[tidyverse] có trang web chính là \url{https://www.tidyverse.org/packages/}. Nó là một tập hợp các gói lệnh R mã nguồn mở được Hadley Wickham và nhóm của ông giới thiệu
+	\item[factoextra] là một gói R giúp dễ dàng trích xuất và trực quan hóa đầu ra của các phân tích dữ liệu đa biến khám phá bao gồm phân tích thành phần chính; phân tích nhân tố và nhiều nhân tố; phân tích nhân tố của dữ liệu hỗn hợp 
+	\item[FactoMineR] dùng để phân tích dữ liệu khám phá đa biến và khai thác dữ liệu. Các phương pháp phân tích dữ liệu thăm dò để tóm tắt, trực quan hóa và mô tả các bộ dữ liệu. Các phương thức thành phần chính có sẵn, những phương thức có tiềm năng lớn nhất về các ứng dụng: phân tích thành phần chính (PCA) khi các biến là định lượng, phân tích tương ứng (CA) và phân tích nhiều tương ứng (MCA) khi các biến được phân loại, Phân tích nhiều yếu tố khi các biến được cấu trúc theo nhóm, v.v. và phân tích cụm phân cấp. F. Husson, S. Le và J. Pages (2017).
+	
+	\item[ggplot2] là gói chương trình lệnh dùng chủ yếu trong các tác vụ đồ thị trực quan hóa dữ liệu mã nguồn mở cho ngôn ngữ lập trình thống kê R.
+	\item[igraph] là gói chương trình cho phép trực quan các mạng phức tạp, mạng tương quan pcor$\ldots$
+\end{description}
+	
+	
+	\section{Nguồn mã lập trình}
+\index{trang web mã nguồn mở Github}	
+Chúng tôi lưu trữ và cập nhật các mã nguồn khi sử dụng phần mềm ngôn ngữ lập trình thống kê R trên trang web mã nguồn mở \href{https://github.com/hungtrannam/PCA_for_Covid19}{Github} (truy cập không cần đăng nhập tài khoản) bao gồm
+
+\begin{SCfigure}
+	\centering
+	\qrcode[height=5cm]{https://github.com/hungtrannam/PCA_for_Covid19}
+	\caption[Đường dẫn cụ thể cho mã vạch QR]{Đường dẫn cụ thể cho mã vạch QR (truy cập không cần đăng nhập tài khoản): \url{https://github.com/hungtrannam/PCA_for_Covid19}}
+\end{SCfigure}
+	
+Giải thích các tệp có trong Github
+\begin{description}
+	\item[README] Giới thiệu các thành viên và phần tóm tắt của bài báo
+	\item[Data] chứa hai bộ tập dữ liệu bao gồm 1) Dữ liệu các ca xác nhận dương tính với SAR-Cov-2 từ 18 tỉnh/thành phố được thu thập theo ngày (đặt tên là \textsf{covid\_case}) 2) Dữ liệu các ca xác nhận dương tính với SAR-Cov-2 được tích luỹ theo ngày (đặt tên là \textsf{covid\_cul});
+	\item[Modules] Tệp R chứa trích gọn các lệnh phân tích dữ liệu. Khi sử dụng, ta lưu ý việc hạ tải nên được lưu ở ổ đĩa \textbf{D} để dễ dàng phân tích phía sau. 
+	\item[thesis] Tệp các chương được trình bày trong cáo báo viết bằng hệ thống soạn thảo văn bản \LaTeX cũng như các hình ảnh minh họa đính kèm.
+	\item[LISENCE] Ghi chú các chương trình lệnh trên ngôn ngữ lập trình R dùng để phân tích và phân loại dữ liệu và hướng dẫn sử dụng gói lệnh phân tích trên R.
+\end{description}
+
+
+
+
+\end{document}
