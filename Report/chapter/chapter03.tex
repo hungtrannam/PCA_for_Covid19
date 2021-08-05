@@ -1,17 +1,12 @@
 \documentclass[../thesis.tex]{subfiles}
 
-
 \begin{document}
 	
 Trong thực tế một đối tượng luôn chịu tác động của nhiều yếu tố khác nhau. Để rút ra được bản chất của sự tương tác, sự ảnh hưởng, mức độ quan hệ của chúng, người ta phải xử lý số liệu nhiều chiều. Cùng với sự phát triển của thống thống kê nhiều chiều, sự phát triển của công nghệ thông tin đã giúp chúng ta xử lý khá hiệu quả số liệu nhiều chiều. 
 
-
 \section{Dẫn nhập}
 Phân tích thành phần chính (principle component analysis, PCA) là phương pháp dựa trên việc tối đa lượng thông tin
 được giữ lại. Nó đi tìm một phép xoay trục toạ độ để được một hệ trục toạ độ\index{trục toạ độ} mới sao cho trong hệ mới này, thông tin của dữ liệu chủ yếu tập trung ở một vài thành phần. Phần còn lại chứa ít thông tin hơn có thể được lược bỏ.
-
-
-
 
 \begin{SCfigure}
 	\centering
@@ -22,19 +17,6 @@ Phân tích thành phần chính (principle component analysis, PCA) là phươn
 
 Hình~\ref{fig:pcavar} minh hoạ các thành phần chính với dữ liệu hai chiều.
 Trong không gian ban đầu với các vector cơ sở $\mathbf{e}_1\,,\mathbf{e}_2$, phương sai theo mỗi chiều dữ liệu (tỉ lệ với độ rộng của các hình chuông màu nâu) đều lớn. Trong hệ cơ sở mới $\mathbf{O}\mathbf{u}_1\mathbf{u}_2$, phương sai theo chiều thứ hai $\hat{\sigma}_2^2$ nhỏ so với $\hat{\sigma}_1^2$. Điều này chỉ ra rằng khi chiếu dữ liệu lên $\mathbf{u}_2$, ta được các điểm rất gần nhau và gần với giá trị trung bình theo chiều đó. Trong trường hợp này, vì giá trị trung bình theo mọi chiều bằng 0, ta có thể thay thế toạ độ theo chiều $\mathbf{u}_2$ bằng 0. Rõ ràng là nếu dữ liệu có phương sai càng nhỏ theo một chiều nào đó thì khi xấp xỉ chiều đó bằng một hằng số, sai số xấp xỉ càng nhỏ. PCA thực chất là đi tìm một phép xoay tương ứng với một ma trận trực giao sao cho trong hệ toạ độ mới, tồn tại các chiều có phương sai nhỏ có thể được bỏ qua; ta chỉ cần giữ lại các chiều/thành phần khác quan trọng hơn. Như đã khẳng định ở trên, tổng phương sai theo toàn bộ các chiều trong một hệ cơ sở bất kỳ là như nhau và bằng tổng các trị riêng của ma trận hiệp phương sai. Vì vậy, PCA còn được coi là phương pháp giảm số chiều dữ liệu sao cho tổng phương sai còn lại là lớn nhất. \cite{VuHuuTiep}. 
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 \section{Thuật toán phân tích thành phần chính}
 
@@ -64,32 +46,12 @@ Từ các suy luận trên, ta có thể tóm tắt lại các bước trong PCA
 
 Như vậy, thuật toán phân tích thành phần chính là thuật toán kết hợp của phép tịnh tiến, xoay trục toạ độ và chiếu dữ liệu lên hệ toạ độ mới.
 
-
-
-
-
-
-
-
-
 \begin{figure}[H]
 	\centering
 	\includegraphics[width=0.8\linewidth]{images/pca_procedure}
 	\caption[Thuật toán phân tích thành phần chính]{Thuật toán phân tích thành phần chính. Bước 1. Tìm véc-tơ trung bình; Bước 2. Lấy dữ liệu trừ lần lượt cho véc-tơ trung bình; Bước 3. Tính ma trận hiệp phương sai $ \mathbf{S} = \frac{1}{n}\widehat{\mathbf{X}} \widehat{\mathbf{X}}^\top $; Bước 4. Tìm giá trị riêng và véc-tơ riêng của ma trận hiệp phương sai $ \mathbf{S} $ lần lượt là $ (\lambda_1\,,\mathbf{u}_1)\,,\ldots\,,(\lambda_D\,,\mathbf{u}_D) $, các véc-tơ riêng được chọn phải tạo thành một hệ trực chuẩn; Bước 5. Chọn $ K $ véc-tơ riêng ứng với giá trị riêng lớn nhất; Bước 6. Chiếu dữ liệu ban đầu xuống các véc-tơ riêng đó; Bước 7. Dữ liệu giảm chiều (các điểm màu đỏ)}
 	\label{fig:pcaprocedure}
 \end{figure}
-
-
-
-
-
-
-
-
-
-
-
-
 
 \section{Tiêu chí giảm thiểu số chiều dữ liệu}
 Phân tích thành phần chính (viết tắt là PCA) là một cách tiếp cận đa biến nổi tiếng chuyển đổi một số biến tương quan thành một số biến không tương quan tuyến tính được đặt tên là các thành phần chính. Trong chuyển đổi này, các thành phần chính đầu tiên chứa nhiều thông tin nhất về tập dữ liệu. Trong các ứng dụng, PCA được áp dụng để chuyển đổi tập dữ liệu chiều cao thành tập dữ liệu chiều thấp hơn, bằng cách chỉ sử dụng một số thành phần chính đầu tiên để giảm kích thước của dữ liệu được biến đổi. Dựa trên Chỉ số Kaiser\index{chỉ số Kaiser}, số lượng các thành phần chính quan trọng bằng số lượng các giá trị riêng của ma trận tương quan với các giá trị lớn hơn 1.
