@@ -1,0 +1,49 @@
+\documentclass[../thesis.tex]{subfiles}
+
+\begin{document}
+
+
+\section{Kết luận}
+
+Những kết quả chính thu được sau khi phân loại 18 biến dữ liệu các tỉnh/thành phố có ca nhiễm hằng ngày và tích lũy bao gồm
+\begin{enumerate}
+	\item Cung cấp thông tin về mô tả số lượng các ca nhiễm theo ngày và các ca nhiễm tích lũy được xác nhận do vi-rút corona từ lúc bắt đầu đợt dịch thứ IV đối với 18 tỉnh/thành phố phía nam.
+	\item Thông tin hệ số tương quan giữa các biến được trình bày bằng tương quan đồ
+	\item Phân tích thành công thuật toán phân tích thành phần chính và phân loại được các biến thành hai nhóm.
+	\item Phân tích nhân tố với các tiêu chí tìm được.
+\end{enumerate}
+
+Đặc biệt, phương pháp phân tích thành phần chính được sử dụng như một công cụ phân loại đối với các dữ liệu rời rạc cho kết quả khá ổn định.
+
+
+Bài nghiên cứu cũng trực quan hóa thành công các mạng tương quan ứng dụng xét các mối quan hệ tương quan giữa các biến. Đặt biệt, chúng tôi nghiên cứu và trực quan thành công biểu đồ tương quan Pearson \ref{fig:pearson} giữa một biến so với các biến còn lại lấy ý tưởng từ tấm bia đạn với mục tiêu chính nằm ở biến được chọn để xét hệ số tương quan với các biến khác. 
+
+
+
+
+Nghiên cứu này sử dụng phần mềm lập trình thống kê R (phiên bản 4.1.0) để phân tích thống kê. R là một ngôn ngữ lập trình với nhiều lợi thế như cú pháp đơn giản, hệ thống thư viện có cấu trúc chặt chẽ, tương thích cao, đặc biệt tối ưu cho các mô hình Machine Learning,$\ldots$ Các chương trình lệnh và thông tin mã nguồn được lưu trữ và cập nhật trên trang web \href{https://github.com/hungtrannam/PCA_For_Covid-19}{Github}.
+
+
+
+
+
+
+\section{Nhận xét sơ bộ bài báo cáo}
+
+Bài báo cáo đã cơ bản hoàn thành với việc giảm thiểu từ 18 biến dữ liệu thành 5 biến với phần trăm phân tích phương sai đạt $ 83\% $ đối với dữ liệu hằng ngày và 1 thành phần chính đối với dữ liệu tích lũy giải thích $ 96\% $ phương sai.
+
+Phân tích nhân tố phân chia dữ liệu hằng ngày thành ba nhân tố chính và chia dữ liệu tích lũy thành hai nhân tố chính. Với hệ số tải cho trước, các hệ số nhân tố đã được thiết lập và phân tích.
+
+Song, vì phải vừa thu thập dữ liệu thứ cấp hằng ngày và kiểm tra trong nhiều nguồn khác nhau, chúng tôi không tránh khỏi khó khăn về thời gian hoàn thiện việc viết bài. Mặc khác, các nghiên cứu trước đây về việc ứng dụng phân tích thành phần chính và phân tích nhân tố cho dữ liệu thời gian khá ít. Điều đó càng làm tăng sự khó khăn cho chúng tôi khi nghiên cứu về vấn đề mới mẻ này. Ngoài ra, bản thân các báo cáo viên cũng phải hứng chịu những tác động tiêu cực bởi đại dịch Covid-19 nên việc trao đổi và nghiên cứu trở nên khó khăn, nhất là đối với sinh viên mới tiếp xúc với chương trình học.
+
+Hướng nghiên cứu tiếp theo chúng tôi tập trung vào phân tích thành phần chính ứng dụng trong phân loại các hình ảnh có số chiều lớn. Sử dụng thêm các bài toán phân loại để phân loại mô hình dưới nền tảng của phân tích thành phần chính.
+
+
+
+
+
+
+
+
+
+\end{document}
