@@ -2,46 +2,36 @@
 
 \begin{document}
 
-
 \section{Lý thuyết đại số tuyến tính}
 
 Lý thuyết đại số tuyến tính cung cấp các định nghĩa về ma trận\index{ma trận} và tập trung vào các khái niệm có liên quan đến thuật toán phân tích thành phần chính và phân tích nhân tố. Ngoài ra bài báo cáo cũng đưa ra quy trình trực giao hóa và cách xác định véc-tơ riêng nhằm đi sâu giải thích thuật toán phân tích thành phần chính.
 
-
 \subsection{Ma trận và các phép tính trên ma trận}
 
 \dng{[Ma trận] Giả sử $ \mathbb{F} $ là một trường tùy ý, mỗi bảng có dạng 
-	$$ \mathbf{A} = \begin{pmatrix} a_{11} & a_{12} & \ldots & a_{1n} \\
-						   a_{21} & a_{22} & \ldots & a_{2n} \\
-						   \vdots & \vdots & 		& \vdots\\
-						   a_{m1} & a_{m2} & \ldots & a_{mn}
-		   \end{pmatrix},
- $$ trong đó $ a_{ij} \in\mathbb{F} $ với $ 1\leq i \leq m $ và $ 1\leq j \leq n $, được gọi là một \emph{ma trận} $ m $ hàng $ n $ cột (hay ma trận cấp $ m\times n $) với các yếu tố trong trường $ \mathbb{F} $. Các vô hướng $ a_{ij}\in \mathbb{F} $ được gọi là \emph{phần tử} (hay hệ tử) của hàng $ i $ cột $ j $ của ma trận $ \mathbf{A} $. 
+	$$ \mathbf{A} = \begin{pmatrix} 
+	a_{11} & a_{12} & \ldots & a_{1n} \\
+	a_{21} & a_{22} & \ldots & a_{2n} \\
+	\vdots & \vdots & 	 & \vdots\\
+	a_{m1} & a_{m2} & \ldots & a_{mn}
+		   \end{pmatrix}, $$ 
+trong đó $ a_{ij} \in\mathbb{F} $ với $ 1 \leq i \leq m $ và $ 1 \leq j \leq n $, được gọi là một \emph{ma trận} $ m $ hàng $ n $ cột (hay ma trận cấp $ m \times n $) với các yếu tố trong trường $ \mathbb{F} $. Các vô hướng $ a_{ij} \in \mathbb{F} $ được gọi là \emph{phần tử} (hay hệ tử) của hàng $ i $ cột $ j $ của ma trận $ \mathbf{A} $. 
  
  Ma trận trên thường được ký hiệu gọn là $ \mathbf{A} = (a_{ij})_{m\times n} $.
 }
-
-
-
-
 
 \dng{[Phép cộng và nhân vô hướng đối với hai ma trận] Ta định nghĩa hai phép toán cộng hai ma trận và nhân ma trận với một vô hướng trên tập hợp các ma trận $ \mathbf{M} $ như sau
 \begin{align*}
 	(a_{ij}) + (b_{ij}) &= (a+b)_{ij}\\
 	\alpha(a_{ij}) &= (\alpha a_{ij})
 \end{align*}
-
 } 
 
 \dng{[Tích của hai ma trận] Giả sử ma trận $ \mathbf{A}= (a_{ij})\in \mathbf{M}(m\times n\,,\mathbb{F}) $ và ma trận $ \mathbf{B}=(b_{ij})\in\mathbf{M}(n\times p\,,\mathbb{F}) $, ta có tích của hai ma trận $ \mathbf{A} $ và $ \mathbf{B} $, ký hiệu $ \mathbf{A}\mathbf{B} $, là ma trận $ \mathbf{C} = (c_{ij}) \in \mathbf{M}(m\times p\,,\mathbb{F}) $ với các phần tử được xác định như sau
 $$ c_{ik} = \sum^{n}_{j=1}a_{ij}b_{jk}\,, (1\leq i \leq m\,,1\leq k\leq p). $$
 }
 
-
-
-
 \dng{[Ma trận đơn vị] Ma trận $ \mathbf{I}_n  $ là phần tử trung hòa của phép nhân hai ma trận. Nếu $ \mathbf{A}\in\mathbf{M}(n\times n\,,\mathbb{F}) $ và $ \mathbf{I}_n $ là ma trận đơn vị bậc $ n $ thì $ \mathbf{A}\mathbf{I} = \mathbf{I}\mathbf{A} = \mathbf{A} $.}
-
 
 \dng{[Ma trận khả nghịch] Ma trận vuông\index{Ma trận vuông} $ \mathbf{A} \in\mathbf{M}(n\times n\,, \mathbb{F}) $ được gọi là \emph{ma trận khả nghịch} (hoặc \emph{ma trận không suy biến}) nếu có ma trận $ \mathbf{B}\in M(n\times n\,, \mathbb{F})$ sao cho $ \mathbf{A} \mathbf{B} = \mathbf{B} \mathbf{A} = \mathbf{I}_n $. Khi đó, ta nói $ \mathbf{B} $ là \emph{ma trận nghịch đảo} của $ \mathbf{A} $ và ký hiệu $ \mathbf{B} = \mathbf{A}^{-1} $
 }
@@ -50,7 +40,6 @@ $$ c_{ik} = \sum^{n}_{j=1}a_{ij}b_{jk}\,, (1\leq i \leq m\,,1\leq k\leq p). $$
 
 \dng{[Vết của ma trận vuông] Với mọi ma trận vuông $ \mathbf{A} = (a_{ij}) \in \mathbf{M}(n\,,n) $, vết của ma trận vuông $ \mathbf{A} $, ký hiệu $ trace(\mathbf{A}) $ được định nghĩa là tổng các phần tử trong đường chéo của $ \mathbf{A} $, tức là $ trace(\mathbf{A}) = \sum^{n}_{i=1}a_{ii}. $}
 
-
 \subsection{Chuẩn}
 
 Phần này định nghĩa chuẩn của một véc-tơ trên tập số thực $ \mathbb{R}^d $ có $ d $-chiều và quy trình trực giao hóa. 
@@ -58,6 +47,7 @@ Phần này định nghĩa chuẩn của một véc-tơ trên tập số thực 
 \dng{[Tích vô hướng của hai véc-tơ] Cho hai véc-tơ $ \mathbf{x}\,,\mathbf{y}\in\mathbb{R}^{d} $ được định nghĩa bởi
 $$ \mathbf{x}^\top\mathbf{y} = \mathbf{y}^\top\mathbf{x} = \sum^{d}_{i=1}x_iy_i $$
 }
+
 Nếu tích vô hướng của hai véc-tơ khác $ \mathbf{0} $ bằng $ 0 $ (không) thì ta nói hai véc-tơ đó trực giao với nhau.
 \dng{[Độ đo phân biệt giữa các phần tử rời rạc] Cho $ X $ là tập tùy ý khác rỗng. Hàm số $ \mathrm{d}\,:\,X\times X \to \mathbb{R} $ là độ đo phân biệt nếu $ \mathrm{d} $ thỏa mãn ba tiên đề
 	\begin{enumerate}[(i)]
@@ -65,10 +55,9 @@ Nếu tích vô hướng của hai véc-tơ khác $ \mathbf{0} $ bằng $ 0 $ (k
 		\item $ \mathrm{d}(x\,,y) = 0\Leftrightarrow x=y $;
 		\item $ \mathrm{d}(x\,,y)=\mathrm{d}(y\,,x) $.
 	\end{enumerate}
-	
-	Nếu ta thêm một tiên đề độ đo phân biệt thỏa mãn bất đẳng thức tam giác $$ \mathrm{d}(x\,,y)\leq \mathrm{d}(x\,,z)+\mathrm{d}(z\,,y)\,,\forall x\,,y\,,z\in X $$ thì khi đó độ đo phân biệt\index{đó độ đo phân biệt} là một metric\index{metric} (khoảng cách).
-}
 
+Nếu ta thêm một tiên đề độ đo phân biệt thỏa mãn bất đẳng thức tam giác $$ \mathrm{d}(x\,,y)\leq \mathrm{d}(x\,,z)+\mathrm{d}(z\,,y)\,,\forall x\,,y\,,z\in X $$ thì khi đó độ đo phân biệt\index{đó độ đo phân biệt} là một metric\index{metric} (khoảng cách).
+}
 
 \dng{[Chuẩn] Hàm số $ f\,:\,\mathbb{R}^d\to\mathbb{R} $ được gọi là một chuẩn \index{chuẩn} nếu nó thỏa mãn ba tiên đề sau đây
 \begin{enumerate}[(i)]
@@ -76,7 +65,6 @@ Nếu tích vô hướng của hai véc-tơ khác $ \mathbf{0} $ bằng $ 0 $ (k
 	\item $ f(\alpha\mathbf{x}) =\vert\alpha\vert f(\mathbf{x})\,,\forall\alpha\in\mathbb{R} $;
 	\item $ f(\mathbf{x}_1) + f(\mathbf{x}_2)\geq f(\mathbf{x}_1 + \mathbf{x}_2)\,,\forall \mathbf{x}_1\,,\mathbf{x}_2\in\mathbb{R}^d$.
 \end{enumerate}
-
 }
 
 \dng{[Chuẩn trong không gian Euclid] Giả sử $ E $ là không gian véc-tơ Euclid với tích vô hướng $ \langle\cdot,\cdot\rangle $. Khi đó, độ dài (hay chuẩn)  của véc-tơ $ \mathbf{v}\in E $ là số thực không âm được định nghĩa $ \Vert \mathbf{v}\Vert = \sqrt{\langle\mathbf{v},\mathbf{v}\rangle} $.}
@@ -94,21 +82,11 @@ Chúng ta sẽ quan tâm nhiều hơn tới chuẩn bậc 2. Chuẩn bậc 2 c�
 \|\mathbf{A}\|_2 = \max_{\mathbf{x}} \frac{\|\mathbf{Ax}\|_2}{\|\mathbf{x}\|_2}
 \end{equation*} 
 
-
-
 \dng{[Hình chiếu của véc-tơ] Cho hai véc-tơ $ \mathbf{x}\,,\mathbf{y}\in\mathbb{R}^d $, ta gọi hình chiếu của véc-tơ $ \mathbf{x} $ lên véc-tơ $ \mathbf{y} $ là véc-tơ $ Proj_{\mathbf{y}}(\mathbf{x}) $ được xác định bởi công thức}
-
-
-
-
-
 
 \subsection{Véc-tơ riêng và giá trị riêng. Thuật toán tìm véc-tơ riêng}
 
-
-
-
-\dng{[Véc-tơ riêng] Cho $ \mathbf{A} \in \mathbf{M}(n\times n\,,\mathbb{R}) $, véc-tơ $ \mathbf{v}\in\mathbb{C}^d\,, \mathbf{v}\neq \mathbf{0} $ được gọi là véc-tơ riêng của $ \mathbf{A} $ nếu tồn tại vô hướng $ \lambda $ sao cho $ \mathbf{A}\mathbf{v} = \lambda \mathbf{v} $. Khi đó, vô hướng $ \lambda $ được gọi là giá trị riêng của $ \mathbf{A} $ và $ \mathbf{v} $ được gọi là véc-tơ riêng\index{véc-tơ riêng} ứng với giá trị riêng\index{giá trị riêng} $ \lambda $ đó.}
+\dng{[Véc-tơ riêng] Cho $ \mathbf{A} \in \mathbf{M} (n \times n\,, \mathbb{R}) $, véc-tơ $ \mathbf{v} \in \mathbb{C}^d\,, \mathbf{v} \neq \mathbf{0} $ được gọi là véc-tơ riêng của $ \mathbf{A} $ nếu tồn tại vô hướng $ \lambda $ sao cho $ \mathbf{A} \mathbf{v} = \lambda \mathbf{v} $. Khi đó, vô hướng $ \lambda $ được gọi là giá trị riêng của $ \mathbf{A} $ và $ \mathbf{v} $ được gọi là véc-tơ riêng\index{véc-tơ riêng} ứng với giá trị riêng \index{giá trị riêng} $ \lambda $ đó.}
 \dng{[Đa thức đặc trưng] Đa thức bậc $ n $ của một ẩn $ \lambda $ trong ma trận $ \mathbf{A} $ với hệ số trong $ \mathbb{F} $ là $$ p_{\mathbf{A}}(\lambda) = \det(\mathbf{A}-\lambda I_n) $$ được gọi là đa thức đặc trưng của ma trận. Ta có nghiệm của đa thức đặc trưng trong ma trận chính là giá trị riêng của ma trận $ \mathbf{A} $.}
 
 Từ định nghĩa trên, ta cũng có $ (\mathbf{A}-\lambda\mathbf{I}_n)\mathbf{x} = 0 $ là phương trình đặc trưng của ma trận, tức $ \mathbf{x} $ là một véc-tơ nằm trong không gian $ \mathcal{N}(\mathbf{A}-\lambda\mathbf{I}_n) $. Về lý thuyết, phương trình đặc trưng có khả năng có nghiệm phức, nghĩa là $ \mathbf{A} $ có giá trị riêng phức. Trên thực tế, ta không xét trường hợp này.
@@ -127,10 +105,6 @@ Bài báo cáo trình bày các khái niệm có liên quan đến thuật toán
 
 \textbf{Tiên đề thứ ba} Xác suất của một tập biến cố là hợp của các tập con không giao nhau bằng tổng các xác suất của các tập con đó. Một chuỗi đếm được bất kỳ gồm các biến cố đôi một không giao nhau $ E_1\,,E_2\,\ldots $ thỏa mãn
 $$ \mathbb{P}(E_1\cup E_2\cup\cdots) = \sum\mathbb{P}(E_i) $$
-
-
-
-
 }
 
 \dng{[Phương sai] Phương sai của đại lượng ngẫu nhiên $ \mathbf{X} $, ký hiệu là $ Var(\mathbf{X}) $, là trung bình bình phương độ lệch so với trung bình
@@ -138,7 +112,6 @@ $$ Var(\mathbf{X}) = \mathbb{E}(\mathbf{X} - \mathbb{E}(\mathbf{X}))^2 $$
 }
 
 Trong thống kê, phương sai đặc trưng cho khoảng cách giữa mỗi số liệu với nhau và đến giá trị trung bình của tập dữ liệu được thể hiện qua công thức
-
 $$ s^2 = \dfrac{1}{n-1}\sum_{i=1}^{n}(x_i-\overline{x})^2, $$
 trong đó, 
 
@@ -157,12 +130,6 @@ Ví dụ, từ một bộ dữ liệu được đo trên ba biến $ \mathbf{X},
 Một cách hữu ích để có được tất cả các giá trị hiệp phương sai có thể có giữa tất cả các biến khác nhau là đặt tất cả các tính toán trong một ma trận. Điều này dẫn đến định nghĩa khái niệm ma trận hiệp phương sai cho một tập hợp dữ liệu $ \mathbf{X} = (\mathbf{X}_1\,, \mathbf{X}_2\,, \ldots, \mathbf{X}_n) $ kích thước $ n $
 $$ C=(c_{ij}){m\times n}, c_{ij}=cov(\mathbf{X}_i\,,\mathbf{X}_j) $$
 
-
-
-
-
-
-
 \dng{[Hệ số tương quan] Hệ số tương quan Pearson\index{hệ số tương quan Pearson} đặc trưng cho mối quan hệ tương quan giữa hai biến số với công thức được xác định như sau
 $$ \rho_{xy} = \dfrac{Cov(\mathbf{X_1}\,,\mathbf{X_2})}{\sigma_\mathbf{X_1}\sigma_\mathbf{X_2}}, $$
 trong đó, 
@@ -170,13 +137,11 @@ trong đó,
 $ Cov(\mathbf{X_1}\,,\mathbf{X_2}) $ là hiệp phương sai của biến $ \mathbf{X_1} $ và $ \mathbf{X_2} $ được tính bằng công thức.
 
 $ \sigma_\mathbf{X_1} $ và $ \sigma_\mathbf{X_2} $ lần lượt là độ lệch chuẩn của biến $ \mathbf{X_1} $ và $ \mathbf{X_2} $, được tính bằng công thức.
-
 }
 
 Hệ số tương quan là đại lượng đo lường mức độ quan hệ giữa hai biến ngẫu nhiên, lấy giá trị từ $ -1 $ đến $ 1 $. Quan hệ giữa hai biến càng chặt nếu hệ số tương quan càng gần $ \pm1 $ và càng lỏng nếu hệ số tương quan càng gần $ 0 $. Quan hệ giữa hai biến là đồng biến nếu tương quan dương, ngược lại nghịch biến nếu tương quan âm.
 
 \dng{[Ma trận tương quan] Với một tập biến $ \mathbf{X_1}\,,\mathbf{X_2}\,\ldots\,,\mathbf{X_n} $ với hệ số tương quan đơn giữa $ \mathbf{X}_i $ và $ \mathbf{X}_j $ viết dưới dạng ma trận vuông $ \rho_{ij} $ được gọi là ma trận tương quan $ n $ dòng $ n $ cột mà các phần tử dòng $ i $ và cột $ j $ là $ \rho_{ij} $.}
-
 
 \section{Phương pháp chuẩn hóa dữ liệu}
 
@@ -197,7 +162,6 @@ $ \bm{\mu} $ là trung bình của biến dữ liệu tương ứng,
 
 $ \bm{\sigma} $ là độ lệch chuẩn
 }
-
 
 \newpage
 \section*{Tổng kết chương}
