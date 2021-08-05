@@ -19,15 +19,7 @@ Trong quá trình tầm soát, một chủng mới delta có khả năng lây la
 
 Chúng tôi nghiên cứu tình hình dịch tễ đối với 18 tỉnh/thành phố thuộc phía Nam (Nam bộ) bao gồm các tỉnh xếp theo mức độ nguy hiểm hiện nay gồm TP. Hồ Chí Minh, Tiền Giang, Long An, An Giang, Bến Tre, Cần Thơ, Vĩnh Long, Trà Vinh, Cà Mau, Hậu Giang, Kiên Giang, Sóc Trăng, Bạc Liêu, Đồng Tháp, Bình Dương, Bà Rịa - Vũng Tàu (viết tắt Vũng Tàu) và Bình Phước.
 
-
-
-
-
 \section{Tổng quan về việc thực hiện}
-
-
-
-
 
 \subsection{Dữ liệu nghiên cứu}
 
@@ -36,6 +28,7 @@ Dữ liệu nghiên cứu bao gồm toàn bộ các trường hợp ghi nhận n
 Phần tiếp theo, chúng tôi nêu lên một số tiêu chuẩn đánh giá khác nhau phục vụ cho tác vụ phân tích thành phần chính và phân tích nhân tố.
 
 \subsection{Các tiêu chuẩn đánh giá mô hình}
+
 \subsubsection{1. Tiêu chuẩn đánh giá dựa trên giá trị p-value} 
 	\begin{itemize}
 		\item Khi $ p-value > 0.05 $: Sự khác biệt không có ý nghĩa thống kê\index{ý nghĩa thống kê}; 
@@ -45,6 +38,7 @@ Phần tiếp theo, chúng tôi nêu lên một số tiêu chuẩn đánh giá k
 	\end{itemize}
 
 \subsubsection{2. Tiêu chuẩn đánh giá hệ số tương quan dựa trên giá trị $ \bf\rho $}
+
 \begin{itemize}
 	\item Khi $ -1 < \rho < -0.5 $: Tương quan nghịch khá cao; 
 	\item Khi $ -0.5 < \rho < 0.5 $: Không có tương quan; 
@@ -53,6 +47,7 @@ Phần tiếp theo, chúng tôi nêu lên một số tiêu chuẩn đánh giá k
 \end{itemize}
 
 \subsubsection{3. Tiêu chuẩn đánh giá thích hợp của phân tích nhân tố trong kiểm định KMO}
+
 \begin{itemize}
 	\item Khi $ \text{Overall MSA} \geq 0.6 $: Phù hợp để phân tích nhân tố; 
 	\item Khi $ \text{Overall MSA} \geq 0.7 $: Rất phù hợp để phân tích nhân tố; 
@@ -79,7 +74,6 @@ Phần tiếp theo, chúng tôi nêu lên một số tiêu chuẩn đánh giá k
 
 \newpage
 \section{Đọc và xử lý số liệu}
-
 
 Số liệu được lưu trữ trên trang \href{https://github.com/hungtrannam/PCA_for_Covid19}{Github} nên khi tải và lưu giải nén trong ổ đĩa cá nhân (khuyến khích sử dụng dữ liệu được lưu ở ổ đĩa \textbf{D}), ta thực hiện đọc dữ liệu vào ngôn ngữ lập trình thống kê R như sau
 
@@ -131,7 +125,7 @@ Dữ liệu bao gồm 19 biến với cỡ mẫu là 90. Ta có tổng quan dữ
 \end{Shaded}
 
 \begin{verbatim}
-	## [1] 96 19
+## [1] 96 19
 \end{verbatim}
 
 \begin{Shaded}
@@ -141,7 +135,7 @@ Dữ liệu bao gồm 19 biến với cỡ mẫu là 90. Ta có tổng quan dữ
 \end{Shaded}
 
 \begin{verbatim}
-	## [1] 96 19
+## [1] 96 19
 \end{verbatim}
 
 Tên các biến được trình bày bằng dòng lệnh dưới đây
@@ -153,11 +147,11 @@ Tên các biến được trình bày bằng dòng lệnh dưới đây
 \end{Shaded}
 
 \begin{verbatim}
-	##  [1] "Day"            "TP.Ho.Chi.Minh" "Tien.Giang"     "Long.An"       
-	##  [5] "An.Giang"       "Ben.Tre"        "TP.Can.Tho"     "Vinh.Long"     
-	##  [9] "Tra.Vinh"       "Ca.Mau"         "Hau.Giang"      "Kien.Giang"    
-	## [13] "Soc.Trang"      "Bac.Lieu"       "Dong.Thap"      "Binh.Duong"    
-	## [17] "Vung.Tau"       "Tay.Ninh"       "Binh.Phuoc"
+##  [1] "Day"            "TP.Ho.Chi.Minh" "Tien.Giang"     "Long.An"       
+##  [5] "An.Giang"       "Ben.Tre"        "TP.Can.Tho"     "Vinh.Long"     
+##  [9] "Tra.Vinh"       "Ca.Mau"         "Hau.Giang"      "Kien.Giang"    
+## [13] "Soc.Trang"      "Bac.Lieu"       "Dong.Thap"      "Binh.Duong"    
+## [17] "Vung.Tau"       "Tay.Ninh"       "Binh.Phuoc"
 \end{verbatim}
 
 \newpage
@@ -198,11 +192,7 @@ Ta xem xét 6 dòng dữ liệu được lấy ngẫu nhiên từ dữ liệu nh
 ## 6        122       17        0         13
 \end{verbatim}
 
-
-
-
 \newpage
-
 Đối với dữ liệu tích lũy, đầu tiên, ta xem xét 6 dòng cuối cùng của dữ liệu như sau
 
 \begin{Shaded}
@@ -235,17 +225,15 @@ Ta xem xét 6 dòng dữ liệu được lấy ngẫu nhiên từ dữ liệu nh
 ## 96      13472     1096     1285        183
 \end{verbatim}
 
-
-
 Biểu đồ sau đây hình~\ref{fig:case} thể hiện số ca nhiễm hằng ngày và số ca nhiễm tích lũy. 
 
 \begin{figure}
-		\centering
-		\subfigure[Đồ thị thể hiện số lượng ca nhiễm hằng ngày tính từ ngày 27/4]{
+	\centering
+	\subfigure[Đồ thị thể hiện số lượng ca nhiễm hằng ngày tính từ ngày 27/4]{
 			\includegraphics[width=1\linewidth]{images/Rplot01}		\label{fig:Rplot01}}
-		\subfigure[Đồ thị thể hiện số lượng ca nhiễm hằng ngày tính từ ngày 27/4 trừ thành phố Hồ Chí Minh]{
+	\subfigure[Đồ thị thể hiện số lượng ca nhiễm hằng ngày tính từ ngày 27/4 trừ thành phố Hồ Chí Minh]{
 			\includegraphics[width=1\linewidth]{images/Rplot02}		\label{fig:Rplot02}}
-		\caption[Đồ thị số ca nhiễm hằng ngày]{Đồ thị số ca nhiễm hằng ngày. Để được tiện trong tra cứu các số liệu, chúng tôi trực quan đồ thị thể hiện số lương ca nhiễm trừ thành phố Hồ Chí Minh. Ta nhận ra có ba tỉnh/thành phố có số ca nhiễm trong ngày khá cao và khác biệt với các tỉnh/thành phố khác là Thành phố Hồ Chí Minh, Bình Dương và Long An đều nằm tập trung ở Đông Nam Bộ và đều có ranh giới với nhau. \label{fig:case}}
+	\caption[Đồ thị số ca nhiễm hằng ngày]{Đồ thị số ca nhiễm hằng ngày. Để được tiện trong tra cứu các số liệu, chúng tôi trực quan đồ thị thể hiện số lương ca nhiễm trừ thành phố Hồ Chí Minh. Ta nhận ra có ba tỉnh/thành phố có số ca nhiễm trong ngày khá cao và khác biệt với các tỉnh/thành phố khác là Thành phố Hồ Chí Minh, Bình Dương và Long An đều nằm tập trung ở Đông Nam Bộ và đều có ranh giới với nhau. \label{fig:case}}
 	\end{figure}
 
 Khi xem xét toàn bộ dữ liệu, ta thấy các trường hợp xác nhận nhiễm bệnh ở các tỉnh phía Nam bắt đầu có dấu hiệu bùng phát từ khoảng cuối tháng năm, tức sau khi bắt đầu đợt dịch lớn ở Bắc Giang khoảng một tháng. Bắt đầu nhiễm mạnh ở thành phố Hồ Chí Minh sau đó, dịch bệnh lan rộng ra các tỉnh Đông Nam Bộ và bùng phát toàn phía Nam. 
@@ -258,12 +246,8 @@ Nhìn tổng quan đồ thị hình~\ref{fig:case}, ta nhận thấy sự khác 
 		\includegraphics[width=1\linewidth]{images/Rplot03}		\label{fig:Rplot03}}
 	\subfigure[Đồ thị thể hiện số lượng ca nhiễm tích lũy tính từ ngày 27/4 trừ thành phố Hồ Chí Minh]{
 		\includegraphics[width=1\linewidth]{images/Rplot04}		\label{fig:Rplot04}}
-			\caption[Đồ thị số ca nhiễm tích lũy]{Đồ thị số ca nhiễm tích lũy nhằm thể hiện tốc độ tăng nhanh các ca nhiễm. Đồ thị (b) cho ta thấy tỉnh Bình Dương có xu hướng tăng sau thành phố Hồ Chí Minh. Cũng trong đồ thị (b) ta thấy rõ hơn mức độ tăng bất thường của tỉnh Long An.\label{fig:cul}}
+	\caption[Đồ thị số ca nhiễm tích lũy]{Đồ thị số ca nhiễm tích lũy nhằm thể hiện tốc độ tăng nhanh các ca nhiễm. Đồ thị (b) cho ta thấy tỉnh Bình Dương có xu hướng tăng sau thành phố Hồ Chí Minh. Cũng trong đồ thị (b) ta thấy rõ hơn mức độ tăng bất thường của tỉnh Long An.\label{fig:cul}}
 \end{figure}
-
-
-
-
 
 \newpage
 \section{Mối tương quan đối với số ca nhiễm bệnh giữa các tỉnh}
@@ -280,6 +264,7 @@ Nhìn tổng quan đồ thị hình~\ref{fig:case}, ta nhận thấy sự khác 
 		\AttributeTok{upper=}\StringTok{"ellipse"}\NormalTok{)}
 	\end{Highlighting}
 \end{Shaded}
+
 \begin{figure}[H]
 	\centering
 	\includegraphics[width=0.8\linewidth]{images/corr_case}
@@ -288,8 +273,6 @@ Nhìn tổng quan đồ thị hình~\ref{fig:case}, ta nhận thấy sự khác 
 \end{figure}
 
 Qua tương quan đồ, không có một cặp biến nào có tương quan âm. Tức là mỗi ngày, dự báo về số ca nhiễm sẽ có thể tiếp tục tăng. Một số cặp tỉnh/thành phố có hệ số tương quan khá cao như Hậu Giang -- Cần Thơ ($ 90\% $), Bình Dương -- Tp. Hồ Chí Minh ($ 80\% $) hoặc Bình Dương -- Hậu Giang ($ 89\% $) là những tỉnh/thành phố có vị trí địa lý giáp nhau hoặc chịu ảnh hưởng bởi thành phố có nhiều ca bệnh.
-
-
 
 \newpage
 
@@ -305,6 +288,7 @@ Từ dữ liệu tích lũy, ta có ma trận tương quan Pearson cho 18 biến
 		\AttributeTok{upper=}\StringTok{"ellipse"}\NormalTok{)}
 	\end{Highlighting}
 \end{Shaded}
+
 \begin{figure}[H]
 	\centering
 	\includegraphics[width=0.8\linewidth]{images/corr_cul}
@@ -312,19 +296,12 @@ Từ dữ liệu tích lũy, ta có ma trận tương quan Pearson cho 18 biến
 	\label{fig:corrcul}
 \end{figure}
 
-
 Ta dễ dàng nhận thấy và cũng không quá ngạc nhiên rằng từ hình \ref{fig:corrcul} hầu hết các cặp biến tương quan thuận rất cao. Đặc biệt ở một số tỉnh tương quan chặt chẽ có hệ số tương quan gần như $ 100\% $. Một số cặp biến tương quan không quá cao như Cà Mau -- Tây Ninh ($ 78\% $) hoặc Cần Thơ -- Cà Mau ($ 82\% $) có thể được suy diễn nguyên nhân khác biệt khoảng cách địa lý và nhiều lệnh giãn cách xã hội được đặt ra nối tiếp nhau khi dịch bệnh bắt đầu bùng phát nhanh ở các tỉnh miền Nam. 
-
-
-
-
-
-
 
 \newpage
 
 Trong trường hợp phân tích tương quan, mối liên kết giữa 2 biến được xác lập nhờ vào giá trị của r và p-value. Ta sẽ mượn các công cụ và lý thuyết Network analysis cho mục tiêu phân tích tương quan
-  \begin{Shaded}
+ \begin{Shaded}
 	\begin{Highlighting}[]
 \NormalTok{Graph\_pcor }\OtherTok{\textless{}{-}}\NormalTok{ case\_data }\SpecialCharTok{\%\textgreater{}\%} \FunctionTok{cor}\NormalTok{() }\SpecialCharTok{\%\textgreater{}\%} 
 \NormalTok{  qgraph}\SpecialCharTok{::}\FunctionTok{qgraph}\NormalTok{(., }
@@ -346,14 +323,6 @@ Trong trường hợp phân tích tương quan, mối liên kết giữa 2 biế
 Từ đồ thị mạng tương quan, ta thấy rõ hơn sự tương tác giữa các tỉnh/thành phố từ dữ liệu thu thập hằng ngày. Các tỉnh tập trung thành nhóm biểu thị sự tương tác cao. Các tỉnh không có tương tác nghĩa là hệ số tương quan không có ý nghĩa thống kê với mức ý nghĩa $ 0.05 $. Độ dài và độ đậm của dây cung biểu thị mức độ tương tác cụ thể giữa các cặp biến. Tỷ lệ của các cạnh theo chiều rộng và độ bão hòa màu. Các cạnh có trọng lượng tuyệt đối lớn hơn giá trị này sẽ có cường độ màu mạnh nhất và càng rộng càng mạnh và các cạnh có trọng lượng tuyệt đối dưới giá trị này sẽ có chiều rộng nhỏ nhất và càng mờ thì trọng lượng càng yếu. Màu xanh thể hiện tương tác thuận, màu đỏ thể hiện tương tác nghịch.
 
 Trong đồ thị mạng tương quan, cụm các biến Can.Tho, Ben.Tre, Vinh.Long, Hau.Giang tương tác cao với nhiều tỉnh thành khác và tương tác lẫn nhau. TP. Hồ Chí Minh tương tác thuận cao với các tỉnh Vĩnh Long, Long An, Trà Vinh và Kiên Giang. Ba biến Ca.Mau, Binh.Phuoc và Bạc Liêu tương quan không có ý nghĩa thống kê. 
-
-
-
-
-
-
-
-
 
 \begin{Shaded}
 	\begin{Highlighting}[]
@@ -383,21 +352,10 @@ Trong đồ thị mạng tương quan trên, tất cả các biến đều có s
 	\label{fig:pearson}
 \end{figure}
 
-
-
-
-
-
-
-
-
-
 \newpage
 \section{Phân tích thành phần chính}
 
 Ta tiến hành thuật toán phân tích thành phần chính để chọn ra số thành phần với hy vọng phản ánh cao nhất phần trăm phương sai dữ liệu. Để dễ dàng trong phân tích, phần này chia thành hai mục phân tích riêng từng loại dữ liệu.
-
-
 
 \subsection{Dữ liệu \textbf{\textsf{case\_data}}}
 \begin{Shaded}
@@ -447,7 +405,6 @@ Tiếp theo ta xem xét các giá trị độ lệch chuẩn\index{độ lệch 
 ## Proportion of Variance 0.00268 0.00175 0.00129 0.00074
 ## Cumulative Proportion  0.99621 0.99797 0.99926 1.00000
 \end{verbatim}
-
 
 Thành phần chính đầu tiên có phần trăm phương sau giải thích $ 55.3\% $ dữ liệu. Khi thành phần chính là 2 ta thấy phần trăm tích lũy ở \textsf{PC2} đạt $ 64.7\% $. Việc giải thích được trên $ 60\% $ dữ liệu là kết quả khá tốt khi phân tích thành phần chính. Nếu ta chọn số thành phần chính là 3 thì tổng phần trăm tích lũy chỉ tăng nhẹ (khoảng $ 8\% $) và nâng việc giải thích dữ liệu khi tăng thêm một chiều thành $ 72.6\% $. 
 
@@ -520,12 +477,11 @@ Thành phần chính đầu tiên có phần trăm phương sau giải thích $ 
 ## Vung.Tau              
 ## Tay.Ninh              
 ## Binh.Phuoc            
-
 \end{verbatim}
 
 \newpage
-
 Khi vẽ sơ đồ sàng lọc cụ thể cho các giá trị riêng và phần trăm phương sai trích, ta có số chiều có sự phân hóa cụ thể
+
 \begin{Shaded}
 	\begin{Highlighting}[]
 \NormalTok{pca\_case }\OtherTok{\textless{}{-}}\NormalTok{ FactoMineR}\SpecialCharTok{::}\FunctionTok{PCA}\NormalTok{(case\_data, }\AttributeTok{graph =} \ConstantTok{FALSE}\NormalTok{)}
@@ -540,6 +496,7 @@ Khi vẽ sơ đồ sàng lọc cụ thể cho các giá trị riêng và phần 
 \NormalTok{gridExtra}\SpecialCharTok{::}\FunctionTok{grid.arrange}\NormalTok{(left, right, }\AttributeTok{ncol =} \DecValTok{2}\NormalTok{)}
 	\end{Highlighting}
 \end{Shaded}
+
 \begin{figure}[H]
 	\centering
 	\includegraphics[width=1\linewidth]{images/Scree_plot_2}
@@ -549,16 +506,9 @@ Khi vẽ sơ đồ sàng lọc cụ thể cho các giá trị riêng và phần 
 
 Qua sơ đồ trên, hơn $ 80\% $ các phương sai có thể được giải thích bởi chỉ $ 5 $ chiều (thành phần) đầu tiên, với thành phần thứ nhất giải thích $ 53.3\% $ như đã biết.
 
-
-
-
-
-
-
 \newpage
-
-
 Bước cuối cùng là hình dung sự phân bố của các mẫu trong không gian sắp xếp mới này, nó chỉ là một phép quay của không gian biến ban đầu của chúng ta. Điểm số mô tả vị trí của các mẫu và chúng ta vẽ biểu đồ này dưới dạng biểu đồ phân tán, bắt đầu với cặp thành phần chính quan trọng nhất (1 và 2). Lưu ý hai chiều đại diện này chỉ chiếm hơn $ 60\% $ sự giải thích dữ liệu.
+
 \begin{Shaded}
 	\begin{Highlighting}[]
 \NormalTok{pca\_case }\SpecialCharTok{\%\textgreater{}\%}\NormalTok{ factoextra}\SpecialCharTok{::}\FunctionTok{fviz\_pca\_biplot}\NormalTok{(.,}
@@ -577,9 +527,6 @@ Bước cuối cùng là hình dung sự phân bố của các mẫu trong khôn
 
 Biểu đồ cho biết vị trí các ngày được đánh số thứ tự tăng dần đến ngày thứ $ 96 $ khi chỉ sử dụng hai thành phần chính làm hệ trục tọa độ. Ngoài ra, biểu đồ biplot cũng chiếu các biến lên hệ trục tọa độ. 
 
-
-
-
 \begin{Shaded}
 	\begin{Highlighting}[]
 \NormalTok{pca\_case }\SpecialCharTok{\%\textgreater{}\%} \FunctionTok{fviz\_pca\_ind}\NormalTok{(.,}
@@ -590,14 +537,12 @@ Biểu đồ cho biết vị trí các ngày được đánh số thứ tự tă
 	\end{Highlighting}
 \end{Shaded}
 
-
 \begin{figure}[H]
 	\centering
 	\includegraphics[width=0.7 \linewidth]{images/ind_case}
 	\caption[Biểu đồ biplot tổng hợp mật độ cos2 giữa hai thành phần chính của dữ liệu hằng ngày]{Biểu đồ biplot tổng hợp mật độ cos2 giữa hai thành phần chính của dữ liệu hằng ngày. Biểu đồ giải thích chính xác hơn độ lớn của giá trị cos2 qua kích thước và phổ màu.}
 	\label{fig:indcase}
 \end{figure}
-
 
 Biểu đồ biplot cá thể trên hai trục chính đầu tiên được thể hiện thông qua hai trục thành phần chính đầu tiên. Các giá trị cos2 (Cô-sin bình phương) càng cao thể hiện khả năng đóng góp vào thành phần chính càng cao. Ta thấy kể từ ngày thứ 71 trở đi, dữ liệu tán xạ ra hai phía của trục chính và có hệ số cos2 tăng đáng kể.
 
@@ -615,7 +560,7 @@ Biểu đồ biplot cá thể trên hai trục chính đầu tiên được th�
 	\end{Highlighting}
 \end{Shaded}
 \begin{landscape}
-		\begin{figure}[H]
+	\begin{figure}[H]
 		\centering
 		\subfigure[Đồ thị biểu diễn tương quan theo hai chiều dữ liệu đầu tiên của dữ liệu theo ngày] {
 			\includegraphics[width=0.48 \linewidth]{images/contrib5_case}		\label{fig:circclustcase}}
@@ -630,14 +575,14 @@ Dựa vào biểu đồ (a) ta thấy sự khác biệt hệ số tải giữa c
 	
 \end{landscape}
 
-
-
 Ta có các giá trị riêng và phần trăm phương sai và phần trăm phương sai tích lũy được viết gọn theo thứ tự giảm dần các giá trị riêng cũng như tăng dần phần trăm phương sai tích lũy như sau
+
 \begin{Shaded}
 	\begin{Highlighting}[]
 \NormalTok{factoextra}\SpecialCharTok{::}\FunctionTok{get\_eig}\NormalTok{(pca\_case)}
 	\end{Highlighting}
 \end{Shaded}
+
 \begin{verbatim}
 ##        eigenvalue variance.percent cumulative.variance.percent
 ## Dim.1  9.94554139      55.25300770                    55.25301
@@ -737,7 +682,6 @@ Ta quan tâm đến 10 giá trị cá thể đầu tiên được tính toán c�
 ## Hau.Giang       0.031 |
 \end{verbatim}
 
-
 \newpage
 \subsection{Dữ liệu \textbf{\textsf{cul\_data}}}
 
@@ -749,8 +693,6 @@ Tương tự đối với dữ liệu ca bệnh tích lũy, ta cũng có sơ đ�
 	\end{Highlighting}
 \end{Shaded}
 
-
-
 \begin{figure}[H]
 	\centering
 	\includegraphics[width=1\linewidth]{images/scree_parallcul}
@@ -759,8 +701,6 @@ Tương tự đối với dữ liệu ca bệnh tích lũy, ta cũng có sơ đ�
 \end{figure}
 
 Ở đây, ta thấy kể từ thành phần chính thứ hai đã có giá trị riêng không vượt qua ngưỡng $ 1.0 $. Điều này cho thấy sự nhất quán trong dữ liệu. Để có cái nhìn đối sánh hơn, ta tiến hành phân tích thành phần chính và tìm số phần trăm giải thích phương sai thích hợp đê giải thích dữ liệu.
-
-
 
 \newpage
 \begin{Shaded}
@@ -786,15 +726,12 @@ Tương tự đối với dữ liệu ca bệnh tích lũy, ta cũng có sơ đ�
 ## Cumulative Proportion  0.99996 0.99998 0.99999 1.00000
 \end{verbatim}
 
-
-
 \begin{Shaded}
 	\begin{Highlighting}[]
 \FunctionTok{princomp}\NormalTok{(cul\_data, }\AttributeTok{scores =} \ConstantTok{TRUE}\NormalTok{) }\SpecialCharTok{\%\textgreater{}\%} 
 		\FunctionTok{loadings}\NormalTok{()}
 	\end{Highlighting}
 \end{Shaded}
-
 
 \begin{verbatim}
 ##
@@ -871,11 +808,6 @@ Tương tự đối với dữ liệu ca bệnh tích lũy, ta cũng có sơ đ�
 ## Cumulative Var   1.000
 \end{verbatim}
 
-
-
-
-
-
 \newpage
 \begin{Shaded}
 	\begin{Highlighting}[]
@@ -891,6 +823,7 @@ Tương tự đối với dữ liệu ca bệnh tích lũy, ta cũng có sơ đ�
 \NormalTok{gridExtra}\SpecialCharTok{::}\FunctionTok{grid.arrange}\NormalTok{(left, right, }\AttributeTok{ncol =} \DecValTok{2}\NormalTok{)}
 	\end{Highlighting}
 \end{Shaded}
+
 \begin{figure}[H]
 	\centering
 	\includegraphics[width=1\linewidth]{images/Scree_plot_2_cul}
@@ -899,9 +832,6 @@ Tương tự đối với dữ liệu ca bệnh tích lũy, ta cũng có sơ đ�
 \end{figure}
 
 Ở đây, thành phần chính đầu tiên đã giải thích một tỷ lệ rất lớn của phương sai, và các thành phần chính tiếp theo giải thích ít hơn nhiều. Điều này cho thấy chúng ta nên tập trung chủ yếu vào  thành phần chính thứ nhất. 
-
-
-
 
 \newpage
 \begin{Shaded}
@@ -914,6 +844,7 @@ Tương tự đối với dữ liệu ca bệnh tích lũy, ta cũng có sơ đ�
 \end{Shaded}
 
 Tương tự đối với dữ liệu hằng ngày, ta nhìn rõ ràng hơn khi trực quan hóa vị trí của từng ngày được đánh số từ 1 đến 96 và biểu thị chỉ số cos2 bằng kích thước và phổ màu.
+
 \begin{figure}[H]
 	\centering
 	\includegraphics[width=0.75\linewidth]{images/biplot_cul}
@@ -941,8 +872,6 @@ Tương tự đối với dữ liệu hằng ngày, ta nhìn rõ ràng hơn khi 
 
 Không quá bất thường khi các véc-tơ biến dữ liệu tích lũy gần như có độ dài như sau do mối tương quan thuận đã phân tích phía trên.
 
-
-
 \newpage
 \begin{landscape}
 	\begin{Shaded}
@@ -956,7 +885,7 @@ Không quá bất thường khi các véc-tơ biến dữ liệu tích lũy gầ
 		\AttributeTok{repel =} \ConstantTok{TRUE}\NormalTok{)}
 		\end{Highlighting}
 	\end{Shaded}
-	
+
 	\begin{figure}[H]
 		\centering
 		\subfigure[Đồ thị biểu diễn tương quan theo hai chiều dữ liệu đầu tiên của dữ liệu tích lũy]{
@@ -968,15 +897,13 @@ Không quá bất thường khi các véc-tơ biến dữ liệu tích lũy gầ
 Ta chia 5 biến được chọn thành hai nhóm. Nhóm 1 gồm hai tỉnh Đồng Tháp và Tiền Giang và Tp. Hồ Chí Minh; Nhóm 2 gồm hai tỉnh Bình Dương và Vũng Tàu.
 \end{landscape}
 
-
-
-
 \newpage
 \begin{Shaded}
 	\begin{Highlighting}[]
 \NormalTok{factoextra}\SpecialCharTok{::}\FunctionTok{get\_eig}\NormalTok{(pca\_cul)}
 	\end{Highlighting}
 \end{Shaded}
+
 \begin{verbatim}
 ##          eigenvalue variance.percent cumulative.variance.percent
 ## Dim.1  1.728623e+01     9.603460e+01                    96.03460
@@ -998,9 +925,6 @@ Ta chia 5 biến được chọn thành hai nhóm. Nhóm 1 gồm hai tỉnh Đ�
 ## Dim.17 1.540549e-04     8.558604e-04                    99.99927
 ## Dim.18 1.320986e-04     7.338813e-04                   100.00000
 \end{verbatim}
-
-
-
 
 \begin{Shaded}
 	\begin{Highlighting}[]
@@ -1077,9 +1001,9 @@ Ta chia 5 biến được chọn thành hai nhóm. Nhóm 1 gồm hai tỉnh Đ�
 ## Hau.Giang       0.000 |
 \end{verbatim}
 
-
 \newpage
 Để thấy độ lớn của các cos2 trong các biến chính đã được chọn, ta có
+
 \begin{Shaded}
 	\begin{Highlighting}[]
 \NormalTok{var }\OtherTok{\textless{}{-}}\NormalTok{ pca\_case }\SpecialCharTok{\%\textgreater{}\%}\NormalTok{ factoextra}\SpecialCharTok{::}\FunctionTok{get\_pca\_var}\NormalTok{()}
@@ -1098,40 +1022,11 @@ Ta chia 5 biến được chọn thành hai nhóm. Nhóm 1 gồm hai tỉnh Đ�
 	\caption[Biểu đồ giá trị cos2 đối với 5 biến đã được chọn làm thành phần chính đối với các biến khi chưa phân tích.]{Biểu đồ giá trị cos2 đối với 5 biến đã được chọn làm thành phần chính đối với các biến khi chưa phân tích.}
 \end{figure}
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 \newpage
 \section{Kiểm định Bartlett -- KMO}
 
 Tiến hành kiểm định Bartlett với dữ liệu \textsf{covid\_case} trong gói lệnh \textbf{psych}. Mục đích của kiểm định này là kiểm tra giả thiết các mẫu có phương sai bằng nhau 
+
 \begin{Shaded}
 	\begin{Highlighting}[]
 \NormalTok{case\_data }\SpecialCharTok{\%\textgreater{}\%}\NormalTok{ psych}\SpecialCharTok{::}\FunctionTok{cortest.bartlett}\NormalTok{()}
@@ -1139,22 +1034,21 @@ Tiến hành kiểm định Bartlett với dữ liệu \textsf{covid\_case} tron
 \end{Shaded}
 
 \begin{verbatim}
-	## R was not square, finding R from data
+## R was not square, finding R from data
 \end{verbatim}
 
 \begin{verbatim}
-	## $chisq
-	## [1] 2105.383
-	## 
-	## $p.value
-	## [1] 0
-	## 
-	## $df
-	## [1] 153
+## $chisq
+## [1] 2105.383
+## 
+## $p.value
+## [1] 0
+## 
+## $df
+## [1] 153
 \end{verbatim}
 
 Ở đây, giá trị $ p-value = 0 $nhau, ta bác bỏ giả thiết phương sai bằng nhau từng đôi. Tức là dữ liệu thích hợp để phân tích nhân tố. Mặt khác ta cũng kiểm định KMO để xem 
-
 
 \begin{Shaded}
 	\begin{Highlighting}[]
@@ -1163,18 +1057,18 @@ Tiến hành kiểm định Bartlett với dữ liệu \textsf{covid\_case} tron
 \end{Shaded}
 
 \begin{verbatim}
-	## Kaiser-Meyer-Olkin factor adequacy
-	## Call: psych::KMO(r = .)
-	## Overall MSA =  0.77
-	## MSA for each item = 
-	## TP.Ho.Chi.Minh     Tien.Giang        Long.An       An.Giang        Ben.Tre 
-	##           0.84           0.87           0.44           0.74           0.72 
-	##        Can.Tho      Vinh.Long       Tra.Vinh         Ca.Mau      Hau.Giang 
-	##           0.72           0.74           0.63           0.73           0.77 
-	##     Kien.Giang      Soc.Trang       Bac.Lieu      Dong.Thap     Binh.Duong 
-	##           0.77           0.63           0.79           0.87           0.90 
-	##       Vung.Tau       Tay.Ninh     Binh.Phuoc 
-	##           0.86           0.78           0.84
+## Kaiser-Meyer-Olkin factor adequacy
+## Call: psych::KMO(r = .)
+## Overall MSA =  0.77
+## MSA for each item = 
+## TP.Ho.Chi.Minh     Tien.Giang        Long.An       An.Giang        Ben.Tre 
+##           0.84           0.87           0.44           0.74           0.72 
+##        Can.Tho      Vinh.Long       Tra.Vinh         Ca.Mau      Hau.Giang 
+##           0.72           0.74           0.63           0.73           0.77 
+##     Kien.Giang      Soc.Trang       Bac.Lieu      Dong.Thap     Binh.Duong 
+##           0.77           0.63           0.79           0.87           0.90 
+##       Vung.Tau       Tay.Ninh     Binh.Phuoc 
+##           0.86           0.78           0.84
 \end{verbatim}
 
 Giá trị KMO trung bình nằm ở mức $ 0.77 $. Theo tiêu chuẩn đánh giá phù hợp để phân tích nhân tố, giá trị $ Overall MSA \geq 0.7 $, ta xác định dữ liệu rất thích hợp để phân tích nhân tố. Hệ số MSA của biến Long An dưới mức phù hợp ($ 0.44 $) nên khi phân tích nhân tố ta loại bỏ biến Long An. Sau khi tiến hành bỏ biến Long An trong dữ liệu thì $ Overall MSA $ có sự thay đổi
@@ -1187,7 +1081,7 @@ Giá trị KMO trung bình nằm ở mức $ 0.77 $. Theo tiêu chuẩn đánh g
 \end{Shaded}
 
 \begin{verbatim}
-	## [1] 0.8227004
+## [1] 0.8227004
 \end{verbatim}
 
 Chỉ số $ MSA = 0.82 $ đã được cải thiện sau khi loại trừ biến Long An có $ MSA = 0.44 $ khá thấp và không phù hợp để phân tích nhân tố.
@@ -1202,20 +1096,19 @@ Ta thực hiện kiểm định Barlett đối với dữ liệu tích lũy, v�
 \end{Shaded}
 
 \begin{verbatim}
-	## R was not square, finding R from data
+## R was not square, finding R from data
 \end{verbatim}
 
 \begin{verbatim}
-	## $chisq
-	## [1] 7978.616
-	## 
-	## $p.value
-	## [1] 0
-	## 
-	## $df
-	## [1] 153
+## $chisq
+## [1] 7978.616
+## 
+## $p.value
+## [1] 0
+## 
+## $df
+## [1] 153
 \end{verbatim}
-
 
 Ở đây, giá trị $ p-value = 0 $ tức là bác bỏ giả thiết . Tức là dữ liệu cũng thích hợp để phân tích nhân tố. Mặt khác ta cũng kiểm định KMO để xem
 
@@ -1226,18 +1119,18 @@ Ta thực hiện kiểm định Barlett đối với dữ liệu tích lũy, v�
 \end{Shaded}
 
 \begin{verbatim}
-	## Kaiser-Meyer-Olkin factor adequacy
-	## Call: psych::KMO(r = .)
-	## Overall MSA =  0.87
-	## MSA for each item = 
-	## TP.Ho.Chi.Minh     Tien.Giang        Long.An       An.Giang        Ben.Tre 
-	##           0.89           0.85           0.83           0.84           0.84 
-	##     TP.Can.Tho      Vinh.Long       Tra.Vinh         Ca.Mau      Hau.Giang 
-	##           0.83           0.94           0.85           0.95           0.85 
-	##     Kien.Giang      Soc.Trang       Bac.Lieu      Dong.Thap     Binh.Duong 
-	##           0.84           0.87           0.94           0.87           0.87 
-	##       Vung.Tau       Tay.Ninh     Binh.Phuoc 
-	##           0.93           0.84           0.94
+## Kaiser-Meyer-Olkin factor adequacy
+## Call: psych::KMO(r = .)
+## Overall MSA =  0.87
+## MSA for each item = 
+## TP.Ho.Chi.Minh     Tien.Giang        Long.An       An.Giang        Ben.Tre 
+##           0.89           0.85           0.83           0.84           0.84 
+##     TP.Can.Tho      Vinh.Long       Tra.Vinh         Ca.Mau      Hau.Giang 
+##           0.83           0.94           0.85           0.95           0.85 
+##     Kien.Giang      Soc.Trang       Bac.Lieu      Dong.Thap     Binh.Duong 
+##           0.84           0.87           0.94           0.87           0.87 
+##       Vung.Tau       Tay.Ninh     Binh.Phuoc 
+##           0.93           0.84           0.94
 \end{verbatim}
 
 Giá trị KMO trung bình nằm ở mức $ 0.87 $ sự thích hợp để phân tích nhân tố là rất cao. Như vậy bảng dữ liệu đủ điều kiện để phân tích nhân tố. Tất cả các biến đều có giá trị MSA trên $ 0.6 $ nên ta không cần loại biến nào. Cả hai dữ liệu trên đều sẵn sàng để phân tích nhân tố.
@@ -1245,12 +1138,6 @@ Giá trị KMO trung bình nằm ở mức $ 0.87 $ sự thích hợp để phâ
 Đối với dữ liệu hằng ngày, ta chọn số nhân tố là 3 và đối với dữ liệu tích lũy ta chọn 2 nhân tố. Vì dữ liệu có 96 quan sát nên ta chọn hệ số tải (Factor Loading) là $ 0.55 $
 
 Như đã phân tích, biến Long An trong dữ liệu hằng ngày có $ KMO $ thấp nên được loại khỏi dữ liệu 
-
-
-
-
-
-
 
 \newpage
 
@@ -1307,7 +1194,6 @@ Như đã phân tích, biến Long An trong dữ liệu hằng ngày có $ KMO $
 ## Fit based upon off diagonal values = 0.99
 \end{verbatim}
 
-
 \begin{Shaded}
 	\begin{Highlighting}[]
 \FunctionTok{principal}\NormalTok{(cul\_data, }
@@ -1356,10 +1242,10 @@ Như đã phân tích, biến Long An trong dữ liệu hằng ngày có $ KMO $
 ## Fit based upon off diagonal values = 1
 \end{verbatim}
 
-
 \newpage
 
 \section{Ma trận xoay}
+
 \begin{Shaded}
 	\begin{Highlighting}[]
 \NormalTok{fa\_case }\OtherTok{\textless{}{-}}\NormalTok{ case\_data }\SpecialCharTok{\%\textgreater{}\%} \FunctionTok{select}\NormalTok{(}\SpecialCharTok{{-}}\NormalTok{Long.An) }\SpecialCharTok{\%\textgreater{}\%}
@@ -1381,8 +1267,6 @@ Như đã phân tích, biến Long An trong dữ liệu hằng ngày có $ KMO $
 	\caption[Phân cụm nhân tố và hệ số nhân tố tương ứng của hai dữ liệu.]{Phân cum nhân tố và hệ số nhân tố tương ứng của hai dữ liệu.}
 \end{figure} 
 
-
-
 \begin{Shaded}
 	\begin{Highlighting}[]
 \NormalTok{fa\_case }\SpecialCharTok{\%\textgreater{}\%} \FunctionTok{factor.plot}\NormalTok{(., }\AttributeTok{cut =} \FloatTok{0.55}\NormalTok{)}
@@ -1399,10 +1283,9 @@ Như đã phân tích, biến Long An trong dữ liệu hằng ngày có $ KMO $
 	\caption[Tương quan nhân tố của dữ liệu nhân tố được xác định với hệ số tải nhân tố $ 0.55 $]{Tương quan nhân tố của dữ liệu nhân tố được xác định với hệ số tải nhân tố $ 0.55 $}
 \end{figure}
 
-
 \newpage
 \section{Bàn luận}
-Do các tác động xã hội, kinh tế và môi trường khác nhau của Covid-19, điều quan trọng là phải nghiên cứu và so sánh tốc độ lây lan của bệnh này ở các tỉnh/thành phố khác nhau. Trong nghiên cứu này, số lượng bệnh nhân có Covid-19 ở 18 tỉnh/thành phố đã được xem xét. Đầu tiên, mối quan hệ giữa các tỉnh/thành phố được xem xét được nghiên cứu bằng cách sử dụng mối tương quan của Pearson. Kết quả chỉ ra rằng có mối quan hệ thuận chiều cực kỳ cao giữa các tỉnh/thành phố được xem xét, dựa trên số lượng bệnh nhân mắc bệnh Covid-19 và tích lũy của số ca nhiễm bệnh theo ngày. Sau đó, dựa trên tốc độ lây lan của Covid-19, các tỉnh/thành phố này được phân loại bằng cách sử dụng phân tích thành phần chính. Kết quả chỉ ra rằng, đối với số lượng bệnh nhân, sự phân bố lây lan ở Sóc Trăng, An Giang, Trà Vinh, Đồng Tháp, Bến Tre, Vĩnh Long và Tp. Hồ Chí Minh là tương tự nhau và khác với các tỉnh/thành phố khác. Ngoài ra, đối với số lượng bệnh nhân tích lũy theo ngày, sự phân bố lây lan ở Bình Dương và Vũng Tàu là tương tự nhau và khác với các tỉnh Đồng Tháp, Tiền Giang và Tp. Hồ Chí Minh khi ta phân tích và chọn ra 5 thành phần chính tiêu biểu. Các tác giả đề nghị các nhà nghiên cứu xem xét nhiều tỉnh/thành phố hơn và phân loại chúng dựa trên phân tích thành phần chính hoặc các phương pháp khác như phân tích nhân tố có sự cải tiến.
 
+Do các tác động xã hội, kinh tế và môi trường khác nhau của Covid-19, điều quan trọng là phải nghiên cứu và so sánh tốc độ lây lan của bệnh này ở các tỉnh/thành phố khác nhau. Trong nghiên cứu này, số lượng bệnh nhân có Covid-19 ở 18 tỉnh/thành phố đã được xem xét. Đầu tiên, mối quan hệ giữa các tỉnh/thành phố được xem xét được nghiên cứu bằng cách sử dụng mối tương quan của Pearson. Kết quả chỉ ra rằng có mối quan hệ thuận chiều cực kỳ cao giữa các tỉnh/thành phố được xem xét, dựa trên số lượng bệnh nhân mắc bệnh Covid-19 và tích lũy của số ca nhiễm bệnh theo ngày. Sau đó, dựa trên tốc độ lây lan của Covid-19, các tỉnh/thành phố này được phân loại bằng cách sử dụng phân tích thành phần chính. Kết quả chỉ ra rằng, đối với số lượng bệnh nhân, sự phân bố lây lan ở Sóc Trăng, An Giang, Trà Vinh, Đồng Tháp, Bến Tre, Vĩnh Long và Tp. Hồ Chí Minh là tương tự nhau và khác với các tỉnh/thành phố khác. Ngoài ra, đối với số lượng bệnh nhân tích lũy theo ngày, sự phân bố lây lan ở Bình Dương và Vũng Tàu là tương tự nhau và khác với các tỉnh Đồng Tháp, Tiền Giang và Tp. Hồ Chí Minh khi ta phân tích và chọn ra 5 thành phần chính tiêu biểu. Các tác giả đề nghị các nhà nghiên cứu xem xét nhiều tỉnh/thành phố hơn và phân loại chúng dựa trên phân tích thành phần chính hoặc các phương pháp khác như phân tích nhân tố có sự cải tiến.
 
 \end{document}
