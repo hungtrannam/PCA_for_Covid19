@@ -22,7 +22,7 @@ TS. Trần Văn Lý
 In this research, the number of patients with Covid-19 due to this disease in some ofprovinces/cities are considered. First, the relations between the considered provinces/cities are studied using Pearson’s correlation. Then, based on the spread rate of Covid-19, these provinces/cities are categorized using principal component analysis and factor analysis. 
 
 ## Tóm tắt nội dung
-Trong nghiên cứu này, số lượng bệnh nhân mắc Covid-19 do bệnh này ở một số tỉnh / thành phố được xem xét. Đầu tiên, mối quan hệ giữa các tỉnh / thành phố được xem xét được nghiên cứu bằng cách sử dụng tương quan Pearson. Sau đó, dựa trên tỷ lệ lây lan của Covid-19, các tỉnh / thành phố này được phân loại bằng cách sử dụng phân tích thành phần chính và phân tích nhân tố.
+Trong nghiên cứu này, số lượng bệnh nhân mắc Covid-19 do bệnh này ở một số tỉnh/thành phố được xem xét. Đầu tiên, mối quan hệ giữa các tỉnh/thành phố được xem xét được nghiên cứu bằng cách sử dụng tương quan Pearson. Sau đó, dựa trên tỷ lệ lây lan của Covid-19, các tỉnh/thành phố này được phân loại bằng cách sử dụng phân tích thành phần chính và phân tích nhân tố.
 
 
 ## Thông tin mã nguồn
