@@ -30,3 +30,14 @@ cor_HCMC <- cor_data %>%
                        coord_polar() + 
                        theme_bw()
 cor_HCMC
+
+# Tương quan Tp. Cần Thơ
+cor_CT <- cor_data %>% 
+                ggplot(., 
+                       aes(x = Variables, 
+                           y = Can.Tho, 
+                           size = Pearson_cor)) + 
+                       geom_point() + 
+                       coord_polar() + 
+                       theme_bw()
+cor_CT
