@@ -21,13 +21,12 @@ Pearson_cor <- 1 - cor_data$TP.Ho.Chi.Minh
 Variables <- cor_data %>% names()
 
 # Tương quan theo biến chính
-cor_HCMC <- cor_data %>% 
-                select(-TP.Ho.Chi.Minh) %>%
-                ggplot(., 
-                       aes(x = Variables, 
-                           y = TP.Ho.Chi.Minh, 
-                           size = Pearson_cor)) + 
-                       geom_point() + 
-                       coord_polar() + 
-                       theme_bw()
+cor_data %>% ggplot(., 
+                    aes(x = Variables, 
+                        y = Pearson_cor, 
+                        size = TP.Ho.Chi.Minh)) + 
+  geom_point(aes(colour = Pearson_cor)) + 
+  coord_polar() + 
+  theme_bw()
+
 cor_HCMC
