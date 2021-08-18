@@ -36,11 +36,7 @@ Giải thích các tệp có trong Github
 
 ## Liên hệ
 
-Nếu bạn gặp thắc mắc liên quan đến bài báo cáo, xin liên hệ 
-
-Tran Nam Hung
-E-mail: hungb1906052@student.ctu.edu.vn hoặc 
-E-mail: hung.m3401.nh@gmail.com
+Nếu bạn gặp thắc mắc liên quan đến bài báo cáo, xin liên hệ Trần Nam Hưng E-mail: hungb1906052@student.ctu.edu.vn hoặc E-mail: hung.m3401.nh@gmail.com.
 
 
 Nếu bạn gặp bất cứ lỗi hoặc cho rằng nội dung có thể được cải thiện, bạn có thể tạo một issue [tại đây](https://github.com/hungtrannam/PCA_for_Covid19/issues).
